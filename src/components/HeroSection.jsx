@@ -13,7 +13,8 @@ export default function HeroSection() {
       className="bg-background-light font-sans overflow-hidden"
     >
       <main className="flex-1">
-        <section className="px-6 sm:px-10 lg:px-20 py-16 lg:py-24">
+        {/* Vertical padding is increased to 'py-20 lg:py-32' to create more surrounding white space */}
+        <section className="px-6 sm:px-10 lg:px-20 py-20 lg:py-32">
           <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
             
             {/* Background Dots - Applied to the entire main container (Original Size/High Density) */}
@@ -59,7 +60,7 @@ export default function HeroSection() {
             {/* Doctor Image and Name */}
             <div className="w-full lg:w-1/2 flex flex-col items-center">
               <div
-                // Reverted aspect-square back to aspect-[4/3]
+                // REVERTED: Back to the original W-3/4 and ASPECT-[4/3] for the original image size
                 className={`w-3/4 aspect-[4/3] bg-[center_top_30%] bg-no-repeat bg-cover rounded-2xl transition-transform duration-700 ease-in-out
                   ${showDoctor ? "-translate-x-180" : "translate-x-0"}`}
                 style={{ backgroundImage: `url("/doccc.jpg")` }}
@@ -106,7 +107,7 @@ export default function HeroSection() {
                 </ul>
 
                 <p className="text-gray-600">
-                  Passionate about helping patients regain an active lifestyle
+                  Passionately about helping patients regain an active lifestyle
                   with personalized care plans and modern surgical techniques.
                 </p>
 
