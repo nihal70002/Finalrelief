@@ -1,253 +1,221 @@
-// src/pages/TotalKneeReplacement.jsx
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { CheckCircleIcon, UsersIcon, ClockIcon, ShieldCheckIcon } from '@heroicons/react/24/solid'
+import React, { useState, useEffect } from 'react';
+import { Clock, Award, Activity, CheckCircle, ChevronDown, Eye, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom'; // 👈 for navigation
 
-// --- Enhanced Data Structure ---
-const treatmentData = {
-  id: "total-knee-replacement",
-  title: "Total Knee Replacement (TKR)",
-  icon: "🦵",
-  shortDesc: "Regain mobility and achieve pain relief.",
-
-  stats: {
-    duration: "90-120 mins",
-    recoveryTime: "6-8 weeks",
-    successRate: "95%+",
-    type: "Surgical",
-  },
-
-  doctor: {
-    name: "Dr. Hyder Kunnummla",
-    title: "Expert Orthopedic Surgeon",
-    experience: "20+ years",
-    specialtyFocus: "Robotic & Minimally Invasive TKR",
-    patientsTreated: "4,000+",
-    tkaCount: "1,500+",
-    image: "/Doc.png",
-    
-  },
-
-  overview:
-    "Total knee replacement, also known as total knee arthroplasty (TKA), is a highly effective surgical procedure for end-stage knee arthritis. Our focus on minimally invasive techniques and advanced robotic assistance leads to less pain and faster recovery.",
-
-  idealFor:
-    "Ideal for patients with severe knee pain from arthritis or post-traumatic conditions, when non-surgical treatments fail.",
-
-  procedure: [
-    "Step 1: Anesthesia and Preparation: General or spinal anesthesia is administered.",
-    "Step 2: Precision Incision: Small incision, often with robotic guidance.",
-    "Step 3: Removing Damaged Tissue: Damaged femur and tibia portions removed.",
-    "Step 4: Implant Placement: Metal components fitted and plastic spacer inserted.",
-    "Step 5: Closure and Recovery: Wound closed, begin pain management and mobilization.",
-  ],
-
-  benefits: [
-    "Long-lasting pain relief.",
-    "Improved mobility and daily activities.",
-    "Corrects knee deformities.",
-    "High implant longevity (15-20 years).",
-  ],
-
-  risks: [
-    "Risk of infection (low).",
-    "Blood clots, managed post-op.",
-    "Temporary stiffness, improved with physiotherapy.",
-    "Rare nerve or blood vessel damage.",
-  ],
-
-  recovery: [
-    "Day 1-3: Hospital stay and gentle weight-bearing.",
-    "Week 1-2: Home recovery and physiotherapy.",
-    "Weeks 3-6: Stop walking aids; driving may resume.",
-    "Weeks 6-12: Return to normal activities; full strength recovers in 6-12 months.",
-  ],
-
-  mockPatientImages: [
-    "https://via.placeholder.com/400x300?text=Post-Op+Walking",
-    "https://via.placeholder.com/400x300?text=Patient+Smiling+and+Active",
-    "https://via.placeholder.com/400x300?text=X-Ray+Result+TKR",
-  ],
-
-  mockTestimonials: [
-    {
-      name: "Mr. Rajesh K.",
-      text: "Dr. Hyder performed my minimally invasive TKR, and I was walking comfortably within a week. Truly life-changing!",
-      image: "https://via.placeholder.com/100?text=R",
-    },
-    {
-      name: "Mrs. Anjali V.",
-      text: "Professional, caring, and skilled. The entire process was seamless. Highly recommend.",
-      image: "https://via.placeholder.com/100?text=A",
-    },
-  ],
-};
-
-export default function TotalKneeReplacement() {
+export default function PartialKneeReplacement() {
+  const [expandedTimeline, setExpandedTimeline] = useState(null);
+  const [expandedRisk, setExpandedRisk] = useState(null);
   const navigate = useNavigate();
-  const treatment = treatmentData;
+
+  // ✅ Always start at top when page loads
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, []);
+
+  const handleGoBack = () => {
+    navigate(-1); // 👈 go back to previous page
+  };
+
+  const timelineData = {
+    'First Few Days': 'Rest and limited movement. Pain and swelling managed with medications.',
+    '1-2 Weeks': 'Gentle physiotherapy and walking with support.',
+    '3-6 Weeks': 'Progressive strengthening and range of motion exercises.',
+  };
+
+  const riskData = {
+    'Infection': 'Low risk; proper wound care is essential.',
+    'Blood Clots': 'Low risk with early mobilization.',
+    'Implant Loosening': 'Rare, but possible if rehabilitation is not followed.',
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Navigation */}
-      <nav className="bg-white shadow sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-2">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex justify-center">
+      <div className="w-full max-w-6xl px-6 py-12 transform scale-75 origin-top mt-16">
+
+        {/* 🔙 Go Back Button */}
+        <div className="mb-8">
           <button
-            onClick={() => navigate("/")}
-            className="flex items-center gap-2 text-gray-600 hover:text-emerald-600 transition-colors text-sm"
+            onClick={handleGoBack}
+            className="flex items-center gap-2 bg-blue-600 text-white px-5 py-2 rounded-full font-medium hover:bg-blue-700 transition-all shadow-md hover:shadow-lg"
           >
-            <span>←</span>
-            <span className="font-semibold">Back to Treatments</span>
+            <ArrowLeft className="w-5 h-5" />
+            Go Back
           </button>
         </div>
-      </nav>
 
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white py-12 md:py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center text-4xl shadow-md flex-shrink-0">
-              {treatment.icon}
-            </div>
-            <div>
-              <h1 className="text-3xl md:text-4xl font-extrabold mb-2">{treatment.title}</h1>
-              <p className="text-emerald-100 text-base md:text-lg font-light">{treatment.shortDesc}</p>
-            </div>
+        {/* Title Section */}
+        <div className="text-center mb-12">
+          <h1 className="text-5xl font-bold text-blue-600 mb-4 flex items-center justify-center gap-2">
+            Partial Knee Replacement
+            <Eye className="w-12 h-12" />
+          </h1>
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            Only the damaged portion of the knee is replaced. Less invasive than total knee replacement with faster recovery.
+          </p>
+        </div>
+
+        {/* Stats Section */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div
+            className="relative rounded-2xl h-96 w-full bg-cover bg-center"
+            style={{ backgroundImage: `url('/Tkr.jpeg')` }}
+          >
+            <div className="absolute inset-0 bg-black/40 rounded-2xl"></div>
           </div>
 
-          {/* Doctor Info */}
-          <div className="max-w-5xl mx-auto bg-gray-800 bg-opacity-95 p-4 rounded-xl border border-emerald-500 shadow-lg backdrop-blur-md">
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <img
-                src={treatment.doctor.image}
-                alt={treatment.doctor.name}
-                className="w-20 h-20 rounded-full border-3 border-emerald-400 object-cover shadow-lg flex-shrink-0"
-              />
+          <div className="space-y-4">
+            <div className="bg-white rounded-2xl shadow-lg p-6 flex items-center gap-4">
+              <Clock className="w-12 h-12 text-blue-500" />
               <div>
-                <h3 className="text-xl font-bold text-emerald-50">{treatment.doctor.name}</h3>
-                <p className="text-emerald-200 italic text-sm">{treatment.doctor.title} - {treatment.doctor.specialtyFocus}</p>
-                <div className="grid grid-cols-2 lg:flex gap-3 mt-2 text-xs">
-                  <p className="flex items-center gap-1 text-emerald-300"><ClockIcon className="w-3 h-3"/> <strong>{treatment.doctor.experience}</strong> Exp</p>
-                  <p className="flex items-center gap-1 text-emerald-300"><UsersIcon className="w-3 h-3"/> <strong>{treatment.doctor.patientsTreated}</strong> Patients</p>
-                  <p className="flex items-center gap-1 text-emerald-300"><CheckCircleIcon className="w-3 h-3"/> <strong>{treatment.doctor.tkaCount}</strong> TKR</p>
+                <div className="text-2xl font-bold text-gray-800">60-120 Minutes</div>
+                <div className="text-gray-600">Duration</div>
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl shadow-lg p-6 flex items-center gap-4">
+              <Award className="w-12 h-12 text-blue-500" />
+              <div>
+                <div className="text-2xl font-bold text-gray-800">97%</div>
+                <div className="text-gray-600">Success Rate</div>
+              </div>
+            </div>
+            <div className="bg-white rounded-2xl shadow-lg p-6 flex items-center gap-4">
+              <Activity className="w-12 h-12 text-blue-500" />
+              <div>
+                <div className="text-2xl font-bold text-gray-800">3-6 Weeks</div>
+                <div className="text-gray-600">Recovery Time</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Overview Section */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Treatment Overview</h2>
+            <p className="text-gray-600 leading-relaxed">
+              Partial knee replacement involves replacing only the damaged compartment of the knee. Healthy tissue and bone are preserved, reducing recovery time and surgical trauma.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-4">Ideal For</h2>
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+                <p className="text-gray-600">Patients with damage limited to a single compartment.</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+                <p className="text-gray-600">Patients seeking faster recovery than total knee replacement.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Procedure Section */}
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
+          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+            The Surgical Procedure: A Step-by-Step Guide
+          </h2>
+          <div className="space-y-6">
+            {[{
+              num: 1, title: 'Anesthesia', desc: 'Local or general anesthesia administered.'
+            },{
+              num: 2, title: 'Incision', desc: 'Small incision over the affected compartment.'
+            },{
+              num: 3, title: 'Replacement', desc: 'Damaged compartment replaced with implant.'
+            },{
+              num: 4, title: 'Closure', desc: 'Incision stitched and bandaged; recovery begins.'
+            }].map((step) => (
+              <div key={step.num} className="flex gap-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                  {step.num}
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Key Stats */}
-          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 mt-4">
-            {Object.entries(treatment.stats).map(([key, value], idx) => (
-              <div key={idx} className="bg-gray-900 bg-opacity-85 rounded-lg p-3 shadow-md text-center transform hover:scale-105 transition-transform duration-300">
-                <span className="text-[10px] font-semibold uppercase tracking-wide text-emerald-400 block mb-1">
-                  {key.replace(/([A-Z])/g, ' $1')}
-                </span>
-                <p className="text-2xl font-bold text-white">{value}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="container mx-auto px-4 py-12 max-w-5xl space-y-12">
-        {/* Overview */}
-        <section>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-4 border-b-2 border-emerald-200 pb-1">Treatment Overview</h2>
-          <p className="text-gray-700 text-sm md:text-base mb-4">{treatment.overview}</p>
-          <div className="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-lg shadow-sm">
-            <h3 className="text-lg font-bold text-emerald-900 mb-2 flex items-center gap-2">
-              <ShieldCheckIcon className="w-5 h-5 text-emerald-600"/> Who is this treatment for?
-            </h3>
-            <p className="text-gray-700 text-sm">{treatment.idealFor}</p>
-          </div>
-        </section>
-
-        {/* Procedure & Benefits */}
-        <div className="grid md:grid-cols-2 gap-6">
-          <section>
-            <h2 className="text-xl md:text-2xl font-bold mb-3">The Procedure: Step-by-Step</h2>
-            {treatment.procedure.map((step, idx) => (
-              <div key={idx} className="flex gap-3 items-start mb-4 border-b pb-2 last:border-b-0">
-                <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm shadow-md mt-1">{idx + 1}</div>
-                <p className="text-gray-700 text-sm">{step}</p>
-              </div>
-            ))}
-          </section>
-          <section>
-            <h2 className="text-xl md:text-2xl font-bold mb-3">Key Benefits of TKR</h2>
-            <ul className="space-y-2 text-gray-700 text-sm">
-              {treatment.benefits.map((b, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <CheckCircleIcon className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-1"/>
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </div>
-
-        {/* Recovery & Risks */}
-        <div className="grid md:grid-cols-2 gap-6">
-          <section>
-            <h2 className="text-xl md:text-2xl font-bold mb-3">Recovery Timeline</h2>
-            <ul className="space-y-2 text-gray-700 bg-white p-4 rounded-lg shadow-sm text-sm">
-              {treatment.recovery.map((r, i) => (
-                <li key={i} className="flex items-start gap-2 border-b pb-1 last:border-b-0">
-                  <ClockIcon className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-1"/>
-                  <span>{r}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-          <section>
-            <h2 className="text-xl md:text-2xl font-bold mb-3">Potential Risks</h2>
-            <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-lg shadow-sm text-sm">
-              <p className="text-gray-700 mb-2">While TKR is routine and safe, be aware of potential risks:</p>
-              <ul className="list-disc pl-5 space-y-1 text-gray-700">
-                {treatment.risks.map((r, i) => <li key={i}>{r}</li>)}
-              </ul>
-            </div>
-          </section>
-        </div>
-
-        {/* Patient Gallery */}
-        <section>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3 border-b-2 border-emerald-200 pb-1">Patient Success Stories & Results</h2>
-          <div className="grid md:grid-cols-3 gap-4">
-            {treatment.mockPatientImages.map((src, idx) => (
-              <img key={idx} src={src} alt={`Patient ${idx+1}`} className="rounded-lg shadow-md w-full h-40 object-cover hover:shadow-lg"/>
-            ))}
-          </div>
-        </section>
-
-        {/* Testimonials */}
-        <section>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3 border-b-2 border-emerald-200 pb-1">What Our Patients Say</h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {treatment.mockTestimonials.map((t, idx) => (
-              <div key={idx} className="bg-white p-4 rounded-lg shadow-md border-t-4 border-emerald-500 text-sm">
-                <p className="text-gray-600 italic mb-2">&ldquo;{t.text}&rdquo;</p>
-                <div className="flex items-center gap-2 pt-2 border-t border-gray-100">
-                  <img src={t.image} alt={t.name} className="w-10 h-10 rounded-full object-cover border-2 border-emerald-400"/>
-                  <div>
-                    <p className="font-bold text-gray-900">{t.name}</p>
-                    <p className="text-xs text-emerald-600">TKR Patient</p>
-                  </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-2">{step.title}</h3>
+                  <p className="text-gray-600">{step.desc}</p>
                 </div>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+
+        {/* Recovery & Risk */}
+        <div className="grid md:grid-cols-2 gap-6 mb-12">
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">Recovery Timeline</h2>
+            <div className="space-y-3">
+              {Object.entries(timelineData).map(([key, value]) => (
+                <div key={key} className="border border-gray-200 rounded-lg">
+                  <button
+                    onClick={() => setExpandedTimeline(expandedTimeline === key ? null : key)}
+                    className="w-full px-4 py-3 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                  >
+                    <span className="font-semibold text-gray-800">{key}</span>
+                    <ChevronDown className={`w-5 h-5 text-gray-500 transition-transform ${expandedTimeline === key ? 'rotate-180' : ''}`} />
+                  </button>
+                  {expandedTimeline === key && <div className="px-4 pb-4 text-gray-600">{value}</div>}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6">Potential Risks</h2>
+            <div className="space-y-3">
+              {Object.entries(riskData).map(([key, value]) => (
+                <div key={key} className="border border-gray-200 rounded-lg">
+                  <button
+                    onClick={() => setExpandedRisk(expandedRisk === key ? null : key)}
+                    className="w-full px-4 py-3 flex items-center justify-between hover:bg-gray-50 transition-colors"
+                  >
+                    <span className="font-semibold text-gray-800">{key}</span>
+                    <ChevronDown className={`w-5 h-5 text-gray-500 transition-transform ${expandedRisk === key ? 'rotate-180' : ''}`} />
+                  </button>
+                  {expandedRisk === key && <div className="px-4 pb-4 text-gray-600">{value}</div>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Patient Stories */}
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12">
+          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Patient Stories</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="rounded-xl overflow-hidden shadow-md">
+              <div className="h-64 bg-gradient-to-br from-blue-200 to-indigo-300 flex items-center justify-center">
+                <div className="text-6xl">🏃‍♀️</div>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-600 italic mb-4">
+                  "Recovery was smooth and pain-free. I can walk comfortably already."
+                </p>
+                <p className="font-bold text-gray-800">- Rohit M.</p>
+              </div>
+            </div>
+
+            <div className="rounded-xl overflow-hidden shadow-md">
+              <div className="h-64 bg-gradient-to-br from-purple-200 to-pink-300 flex items-center justify-center">
+                <div className="text-6xl">🏋️‍♂️</div>
+              </div>
+              <div className="p-6">
+                <p className="text-gray-600 italic mb-4">
+                  "Minimal incision, fast recovery. Highly recommend partial knee replacement!"
+                </p>
+                <p className="font-bold text-gray-800">- Ananya R.</p>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* CTA */}
-        <section className="bg-emerald-700 text-white p-6 rounded-xl shadow-md text-center mt-12">
-          <h2 className="text-2xl md:text-3xl font-extrabold mb-2">Ready to Walk Without Pain?</h2>
-          <p className="text-sm md:text-base mb-4 text-emerald-100">Take the first step towards a pain-free life and restored mobility. Book a consultation with Dr. Hyder Kunnummla.</p>
-          <button onClick={() => alert("Navigate to Booking Page")} className="bg-white text-emerald-700 hover:bg-emerald-50 font-bold text-sm md:text-base py-2 px-6 rounded-full shadow-sm hover:scale-105 transition-transform">
+        <div className="text-center">
+          <button className="bg-gradient-to-r from-blue-500 to-indigo-500 text-white px-12 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
             Book Your Consultation Now
           </button>
-        </section>
+        </div>
+
       </div>
     </div>
   );

@@ -1,4 +1,3 @@
-// App.jsx
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
@@ -14,6 +13,9 @@ import Acl from "./pages/Acl";
 import Minimal from "./pages/Minimal";
 import Arthroscopic from "./pages/Arthroscopic";
 import Conservative from "./pages/Conservative";
+import Meniscus from "./pages/Meniscus";
+import Revision from "./pages/Revision";
+import About from "./pages/About"; // <-- Correct import for About page
 
 export default function App() {
   return (
@@ -27,36 +29,23 @@ export default function App() {
               <HeroSection />
               <SurgeryFinderSection />
               <TreatmentSection />
-              <StatisticsSection />
               <TestimonialsSection />
+              <StatisticsSection />
               <ContactSection />
             </>
           }
         />
-        <Route
-          path="/treatment/total-knee-replacement"
-          element={<TotalKneeReplacement />}
-        />
-        <Route
-          path="/treatment/partial-knee-replacement"
-          element={<PartialKneeReplacement />}
-        />
-        <Route
-          path="/treatment/acl-reconstruction"
-          element={<Acl />}
-          />
-          <Route
-          path="/treatment/minimally-invasive-surgery"
-          element={<Minimal />}
-          />
-          <Route
-          path="/treatment/arthroscopic-surgery"
-          element={<Arthroscopic />}
-          />
-          <Route
-          path="/treatment/conservative-treatment"
-          element={<Conservative />}
-          />
+        <Route path="/about" element={<About />} /> {/* About page route */}
+
+        {/* Existing treatment routes */}
+        <Route path="/treatment/total-knee-replacement" element={<TotalKneeReplacement />} />
+        <Route path="/treatment/partial-knee-replacement" element={<PartialKneeReplacement />} />
+        <Route path="/treatment/acl-reconstruction" element={<Acl />} />
+        <Route path="/treatment/minimally-invasive-surgery" element={<Minimal />} />
+        <Route path="/treatment/arthroscopic-surgery" element={<Arthroscopic />} />
+        <Route path="/treatment/conservative-treatment" element={<Conservative />} />
+        <Route path="/treatment/meniscus-surgery" element={<Meniscus />} />
+        <Route path="/treatment/Revision-surgery" element={<Revision />} />
       </Routes>
     </>
   );
