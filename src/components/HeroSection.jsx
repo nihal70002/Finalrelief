@@ -10,7 +10,7 @@ export default function HeroSection() {
           <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
 
             {/* Background Dots */}
-            <div className="absolute inset-0 opacity-6">
+            <div className="absolute inset-0 opacity-7">
               <div
                 className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPjwvc3ZnPg==')] 
                 bg-repeat scale-2 sm:scale-100"

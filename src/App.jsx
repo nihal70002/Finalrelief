@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import HeroSection from "./components/HeroSection";
 import TreatmentSection from "./components/TreatmentSection";
@@ -15,12 +15,16 @@ import Arthroscopic from "./pages/Arthroscopic";
 import Conservative from "./pages/Conservative";
 import Meniscus from "./pages/Meniscus";
 import Revision from "./pages/Revision";
-import About from "./pages/About"; // <-- Correct import for About page
+import About from "./pages/About";
 
 export default function App() {
+  const location = useLocation();
+
   return (
     <>
-      <Navigation />
+      {/* Show global Navigation only if NOT on About page */}
+      {location.pathname !== "/about" && <Navigation />}
+
       <Routes>
         <Route
           path="/"
@@ -35,7 +39,7 @@ export default function App() {
             </>
           }
         />
-        <Route path="/about" element={<About />} /> {/* About page route */}
+        <Route path="/about" element={<About />} />
 
         {/* Existing treatment routes */}
         <Route path="/treatment/total-knee-replacement" element={<TotalKneeReplacement />} />
@@ -45,7 +49,7 @@ export default function App() {
         <Route path="/treatment/arthroscopic-surgery" element={<Arthroscopic />} />
         <Route path="/treatment/conservative-treatment" element={<Conservative />} />
         <Route path="/treatment/meniscus-surgery" element={<Meniscus />} />
-        <Route path="/treatment/Revision-surgery" element={<Revision />} />
+        <Route path="/treatment/revision-surgery" element={<Revision />} />
       </Routes>
     </>
   );
