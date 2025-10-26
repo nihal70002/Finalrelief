@@ -270,7 +270,7 @@ export default function About() {
           <footer className="bg-slate-200 border-t border-slate-300 mt-16">
             <div className="max-w-[1280px] mx-auto px-4 md:px-10 lg:px-20 xl:px-40 py-8 text-center text-slate-600 text-sm">
               <p>© 2024 Dr. Hyder Kunnumal. All Rights Reserved.</p>
-              <p className="mt-2">This website is for informational purposes only and does not constitute medical advice. Consultations are available at Malabar Hospital and Relief Hospital.</p>
+              <p className="mt-2">This website is for informational purpses only and does not constitute medical advice. Consultations are available at Malabar Hospital and Relief Hospital.</p>
             </div>
           </footer>
         </div>
