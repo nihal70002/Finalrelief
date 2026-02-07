@@ -1,13 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 
 export default function SurgeryFinderSection() {
+  const cardRef = useRef(null);
+  const sectionRef = useRef(null);
+
   const [isVisible, setIsVisible] = useState(false);
   const [step, setStep] = useState(1);
   const [selectedSymptoms, setSelectedSymptoms] = useState([]);
   const [selectedCause, setSelectedCause] = useState("");
   const [selectedAge, setSelectedAge] = useState("");
   const [recommendedSurgeries, setRecommendedSurgeries] = useState([]);
-  const sectionRef = useRef(null);
+const hasInteractedRef = useRef(false);
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -20,6 +24,29 @@ export default function SurgeryFinderSection() {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
+/* ✅ Scroll CARD to middle ONLY after user interaction */
+useEffect(() => {
+  if (!hasInteractedRef.current) return; // 🔥 THIS LINE FIXES EVERYTHING
+
+  if (cardRef.current) {
+    const rect = cardRef.current.getBoundingClientRect();
+
+    const scrollTop =
+      rect.top +
+      window.pageYOffset -
+      window.innerHeight / 2 +
+      rect.height / 2;
+
+    window.scrollTo({
+      top: scrollTop,
+      behavior: "smooth",
+    });
+  }
+}, [step]);
+
+
+
+
 
   const symptoms = [
     { id: "knee-pain", label: "Chronic Knee Pain",  desc: "Persistent pain in knee", img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" },
@@ -48,88 +75,57 @@ export default function SurgeryFinderSection() {
     { id: "elderly", label: "65+", icon: "👵", desc: "Elderly" }
   ];
 
-  const surgeryDatabase = {
-    acl: {
-      name: "ACL Reconstruction Surgery",
-      description: "Surgical reconstruction of the torn anterior cruciate ligament using a graft to restore knee stability.",
-      recoveryTime: "6-9 months",
-      bestFor: ["Sports injuries", "Knee instability", "Active lifestyle"],
-      urgency: "scheduled",
-      successRate: "95%",
-      
-      img: "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=800&h=600&fit=crop"
-    },
-    meniscus: {
-      name: "Meniscus Repair/Removal",
-      description: "Surgical treatment for torn meniscus cartilage to relieve pain and restore function.",
-      recoveryTime: "3-6 months",
-      bestFor: ["Locking knee", "Catching sensation", "Sports injury"],
-      urgency: "scheduled",
-      successRate: "90%",
-      
-      img: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&h=600&fit=crop"
-    },
-    tkr: {
-      name: "Total Knee Replacement",
-      description: "Complete replacement of damaged knee joint with prosthetic components for pain relief and improved mobility.",
-      recoveryTime: "3-6 months",
-      bestFor: ["Chronic severe pain", "Age 50+", "Arthritis"],
-      urgency: "consultation",
-      successRate: "93%",
-      
-      img: "https://images.unsplash.com/photo-1516549655169-df83a0774514?w=800&h=600&fit=crop"
-    },
-    quadricepsTendonRepair: {
-      name: "Quadriceps Tendon Repair",
-      description: "Repair of a torn quadriceps tendon, crucial for knee extension and mobility.",
-      recoveryTime: "6-9 months",
-      bestFor: ["Quadriceps tendon rupture", "Trauma or degenerative injury"],
-      urgency: "scheduled",
-      successRate: "92%",
-      
-      img: "https://images.unsplash.com/photo-1618177806434-6ed0e37a345c?w=800&h=600&fit=crop"
-    },
-    highTibialOsteotomy: {
-      name: "High Tibial Osteotomy (HTO)",
-      description: "Realigns the knee joint to relieve pressure from the damaged compartment.",
-      recoveryTime: "6-12 months",
-      bestFor: ["Younger patients with early osteoarthritis"],
-      urgency: "scheduled",
-      successRate: "88%",
-      
-      img: "https://images.unsplash.com/photo-1618177806434-6ed0e37a345c?w=800&h=600&fit=crop"
-    },
-    unicompartmentalKneeArthroplasty: {
-      name: "Unicompartmental Knee Arthroplasty (UKA)",
-      description: "Partial knee replacement for arthritis limited to one compartment.",
-      recoveryTime: "3-6 months",
-      bestFor: ["Localized knee arthritis", "Patients with healthy remaining compartments"],
-      urgency: "scheduled",
-      successRate: "90%",
-      
-      img: "https://images.unsplash.com/photo-1618177806434-6ed0e37a345c?w=800&h=600&fit=crop"
-    },
-    arthroscopicDebridement: {
-      name: "Arthroscopic Debridement",
-      description: "Minimally invasive removal of damaged cartilage or loose bodies within the knee joint.",
-      recoveryTime: "2-4 weeks",
-      bestFor: ["Minor cartilage damage", "Loose bodies causing pain"],
-      urgency: "scheduled",
-      successRate: "75%",
-      
-      img: "https://images.unsplash.com/photo-1618177806434-6ed0e37a345c?w=800&h=600&fit=crop"
-    },
-    patellarTendonRepair: {
-      name: "Patellar Tendon Repair",
-      description: "Repair of a torn patellar tendon, essential for knee extension.",
-      recoveryTime: "6-9 months",
-      bestFor: ["Patellar tendon rupture", "Trauma-related injuries"],
-      urgency: "scheduled",
-      successRate: "93%",
-      
-      img: "https://images.unsplash.com/photo-1618177806434-6ed0e37a345c?w=800&h=600&fit=crop"
-    }
-  };
+const surgeryDatabase = {
+  acl: {
+    name: "ACL Reconstruction Surgery",
+    description: "Surgical reconstruction of the torn anterior cruciate ligament using a graft to restore knee stability.",
+    recoveryTime: "6-9 months",
+    bestFor: ["Sports injuries", "Knee instability", "Active lifestyle"],
+    urgency: "scheduled",
+    successRate: "95%",
+    img: "https://picsum.photos/800/500?random=11"
+  },
+
+  meniscus: {
+    name: "Meniscus Repair/Removal",
+    description: "Surgical treatment for torn meniscus cartilage to relieve pain and restore function.",
+    recoveryTime: "3-6 months",
+    bestFor: ["Locking knee", "Catching sensation", "Sports injury"],
+    urgency: "scheduled",
+    successRate: "90%",
+    img: "https://picsum.photos/800/500?random=12"
+  },
+
+  tkr: {
+    name: "Total Knee Replacement",
+    description: "Complete replacement of damaged knee joint with prosthetic components for pain relief and improved mobility.",
+    recoveryTime: "3-6 months",
+    bestFor: ["Chronic severe pain", "Age 50+", "Arthritis"],
+    urgency: "consultation",
+    successRate: "93%",
+    img: "https://picsum.photos/800/500?random=13"
+  },
+
+  highTibialOsteotomy: {
+    name: "High Tibial Osteotomy (HTO)",
+    description: "Realigns the knee joint to relieve pressure from the damaged compartment.",
+    recoveryTime: "6-12 months",
+    bestFor: ["Younger patients with early osteoarthritis"],
+    urgency: "scheduled",
+    successRate: "88%",
+    img: "https://picsum.photos/800/500?random=14"
+  },
+
+  unicompartmentalKneeArthroplasty: {
+    name: "Unicompartmental Knee Arthroplasty (UKA)",
+    description: "Partial knee replacement for arthritis limited to one compartment.",
+    recoveryTime: "3-6 months",
+    bestFor: ["Localized knee arthritis"],
+    urgency: "scheduled",
+    successRate: "90%",
+    img: "https://picsum.photos/800/500?random=15"
+  }
+};
 
   const toggleSymptom = (id) => {
     setSelectedSymptoms((prev) =>
@@ -138,56 +134,49 @@ export default function SurgeryFinderSection() {
   };
 
   const findMatchingSurgeries = () => {
-    const matches = [];
-    const symptomSet = new Set(selectedSymptoms);
+  const matches = [];
+  const symptomSet = new Set(selectedSymptoms);
 
-    // ACL Reconstruction
-    if ((selectedCause === "sports" || selectedCause === "sudden") &&
-        (symptomSet.has("instability") || symptomSet.has("popping"))) {
-      matches.push(surgeryDatabase.acl);
-    }
+  // ACL Reconstruction
+  if (
+    (selectedCause === "sports" || selectedCause === "sudden") &&
+    (symptomSet.has("instability") || symptomSet.has("popping"))
+  ) {
+    matches.push(surgeryDatabase.acl);
+  }
 
-    // Meniscus Repair
-    if (symptomSet.has("locking") || symptomSet.has("stiffness")) {
-      matches.push(surgeryDatabase.meniscus);
-    }
+  // Meniscus Repair
+  if (symptomSet.has("locking") || symptomSet.has("stiffness")) {
+    matches.push(surgeryDatabase.meniscus);
+  }
 
-    // Total Knee Replacement
-    if (symptomSet.has("knee-pain") && (selectedAge === "senior" || selectedAge === "elderly")) {
-      matches.push(surgeryDatabase.tkr);
-    }
+  // Total Knee Replacement
+  if (
+    symptomSet.has("knee-pain") &&
+    (selectedAge === "senior" || selectedAge === "elderly")
+  ) {
+    matches.push(surgeryDatabase.tkr);
+  }
 
-    // Quadriceps Tendon Repair
-    if (symptomSet.has("sharp-pain") && selectedCause === "sports") {
-      matches.push(surgeryDatabase.quadricepsTendonRepair);
-    }
+  // High Tibial Osteotomy
+  if (symptomSet.has("knee-pain") && selectedAge === "middle") {
+    matches.push(surgeryDatabase.highTibialOsteotomy);
+  }
 
-    // High Tibial Osteotomy
-    if (symptomSet.has("knee-pain") && selectedAge === "middle") {
-      matches.push(surgeryDatabase.highTibialOsteotomy);
-    }
+  // Unicompartmental Knee Arthroplasty
+  if (symptomSet.has("knee-pain") && selectedAge === "middle") {
+    matches.push(surgeryDatabase.unicompartmentalKneeArthroplasty);
+  }
 
-    // Unicompartmental Knee Arthroplasty
-    if (symptomSet.has("knee-pain") && selectedAge === "middle") {
-      matches.push(surgeryDatabase.unicompartmentalKneeArthroplasty);
-    }
+  // Fallback
+  if (!matches.length) {
+    matches.push(surgeryDatabase.acl);
+  }
 
-    // Arthroscopic Debridement
-    if (symptomSet.has("swelling") || symptomSet.has("popping")) {
-      matches.push(surgeryDatabase.arthroscopicDebridement);
-    }
+  setRecommendedSurgeries(matches);
+  setStep(4);
+};
 
-    // Patellar Tendon Repair
-    if (symptomSet.has("instability") && selectedCause === "sports") {
-      matches.push(surgeryDatabase.patellarTendonRepair);
-    }
-
-    // Default fallback if no match
-    if (!matches.length) matches.push(surgeryDatabase.acl);
-
-    setRecommendedSurgeries(matches);
-    setStep(4);
-  };
 
   const resetFinder = () => {
     setStep(1);
@@ -264,12 +253,16 @@ export default function SurgeryFinderSection() {
         </div>
 
         {/* Main Content Card */}
-        <div className="max-w-4xl mx-auto bg-white rounded-xl md:rounded-2xl shadow-lg p-4 md:p-6 lg:p-8">
+        <div
+  ref={cardRef}
+  className="max-w-4xl mx-auto bg-white rounded-xl md:rounded-2xl shadow-lg p-3  lg:p-8"
+>
+
           {/* Step 1: Symptoms */}
           {step === 1 && (
             <div className="space-y-4">
               <p className="text-gray-600 text-center mb-4 text-sm px-2">Select all symptoms you're experiencing (you can choose multiple)</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3">
                 {symptoms.map((s) => (
                   <button
                     key={s.id}
@@ -280,7 +273,7 @@ export default function SurgeryFinderSection() {
                         : "hover:scale-101"
                     }`}
                   >
-                    <div className="relative h-24 md:h-28 overflow-hidden">
+                    <div className="relative h-28 overflow-hidden">
                       <img 
                         src={s.img} 
                         alt={s.label}
@@ -294,7 +287,7 @@ export default function SurgeryFinderSection() {
                       <div className="absolute top-2 left-2 text-xl">{s.icon}</div>
                     </div>
                     <div className="p-3 bg-white">
-                      <h4 className="font-semibold text-gray-900 mb-1 text-sm">{s.label}</h4>
+                      <h4 className="font-semibold text-gray-900 mb-1 text-base">{s.label}</h4>
                       <p className="text-xs text-gray-600">{s.desc}</p>
                     </div>
                     {selectedSymptoms.includes(s.id) && (
@@ -323,7 +316,7 @@ export default function SurgeryFinderSection() {
           {step === 2 && (
             <div className="space-y-4">
               <p className="text-gray-600 text-center mb-4 text-sm px-2">How did your knee problem start?</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3">
                 {causes.map((c) => (
                   <button
                     key={c.id}
@@ -439,12 +432,13 @@ export default function SurgeryFinderSection() {
               </div>
 
               <div className="space-y-3">
-                {recommendedSurgeries.map((surgery, i) => (
+                {recommendedSurgeries.filter(Boolean).map((surgery, i) => (
+
                   <div
                     key={i}
                     className="bg-gradient-to-br from-white to-emerald-50 border border-emerald-200 rounded-lg md:rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-101"
                   >
-                    <div className="relative h-32 md:h-40 overflow-hidden">
+                    <div className="relative h-24 md:h-40 overflow-hidden">
                       <img 
                         src={surgery.img} 
                         alt={surgery.name}
@@ -513,9 +507,7 @@ export default function SurgeryFinderSection() {
           <p className="text-sm text-gray-600 mb-2">
             Still have questions? Our medical experts are here to help.
           </p>
-          <button className="text-emerald-600 text-sm font-semibold hover:text-emerald-700 transition-colors">
-            Contact Us → 
-          </button>
+        
         </div>
       </div>
     </section>

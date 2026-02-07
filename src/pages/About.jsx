@@ -85,7 +85,7 @@ export default function About() {
                     <div className="flex flex-col gap-4">
                       <div className="flex items-center gap-3">
                         {/* Smaller Image placeholder for Dr. Hyder Kunnumal */}
-                        <div className="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfAUe7v27ZKz41ZuXaZe5J6xsvX27g8X15wnB875sDn3BAIEdtVQhzSZtONYgRtaozYkkIauHzX3yVsOThE_q5XFZ4X0gL_Z7UXl_F9vyU2FFSx-E2kEuKOcTapv0Jx7Qw8soEWXo6BBg3CGGrNn1xX1oRCyEWX0zPm4mH7mBvciYwZqe_tkq1M3n_lBWOhIaLal5JucQouuQPs0cZlYRfu-_aDgUUdfFeZoDhyhLYZlEkijZ7gS9wvpulcryTEq9RNYiUf0B_Vr8F")'}}></div>
+                        
                         <div className="flex flex-col">
                           <h3 className="text-base font-semibold leading-normal">Dr. Hyder Kunnumal</h3>
                           <p className="text-sm font-normal leading-normal text-slate-500">Orthopedic & Robotic Surgeon</p>

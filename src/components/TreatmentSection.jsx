@@ -108,7 +108,8 @@ export default function TreatmentSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto"> 
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+
           {treatmentOptions.map((treatment, index) => (
             <div
               key={treatment.id}

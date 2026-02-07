@@ -57,7 +57,7 @@ export default function StatisticsSection() {
 
   // Updated stats structure to separate the numeric value from the suffix
   const stats = [
-    { label: "Patients Treated", value: 2500, suffix: "+" },
+    { label: "Patients Treated", value: 10000, suffix: "+" },
     { label: "Successful Surgeries", value: 98, suffix: "%" },
     { label: "Expert Surgeons", value: 15, suffix: "+" },
   ];
@@ -67,7 +67,8 @@ export default function StatisticsSection() {
       <div className="container mx-auto text-center px-4"> {/* Added px-4 for better responsiveness */}
         <h2 className="text-3xl font-bold mb-12">Our Impact</h2>
         {/* Changed to a grid on small screens for better stacking, then back to flex on medium screens and up */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-12"> 
+        <div className="grid grid-cols-3 gap-6">
+
           {stats.map((stat, idx) => (
             <StatCard
               key={idx}
@@ -100,7 +101,8 @@ const StatCard = ({ label, endValue, suffix, isVisible }) => {
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
       }`}
     >
-      <p className="text-5xl sm:text-4xl md:text-5xl font-extrabold text-emerald-600">
+      <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-emerald-600">
+
         {formattedCount}
         {suffix}
       </p>

@@ -33,7 +33,7 @@ export default function HeroSection() {
                     : "translate-x-0 opacity-100"
                 }`}
             >
-              <h1 className="text-gray-900 text-3xl sm:text-4xl font-extrabold leading-tight tracking-[-0.033em] font-serif">
+              <h1 className="text-gray-900 text-2xl sm:text-3xl font-extrabold leading-tight tracking-[-0.033em] font-serif">
                 Regain Your Active Life. Expert Knee Replacement Care Starts
                 Here.
               </h1>
@@ -52,7 +52,7 @@ export default function HeroSection() {
                   onClick={() => setShowDoctor(true)}
                   className="flex items-center justify-center rounded-lg h-12 px-6 bg-white text-emerald-400 border border-emerald-400 text-base font-semibold leading-normal tracking-[0.015em] hover:bg-emerald-400 hover:text-white transition-colors font-sans"
                 >
-                  <span className="truncate">Know More About Dr. Hyder</span>
+                  <span className="truncate">Know More About Dr. Hydar</span>
                 </button>
               </div>
             </div>
@@ -67,7 +67,7 @@ export default function HeroSection() {
               ></div>
 
               <h3 className="mt-4 text-xl font-semibold text-gray-900">
-                Dr. Hyder Kunnumal
+                Dr. Hydar Kunnumal
               </h3>
               <p className="text-gray-600 text-sm">
                 MBBS, MS-Ortho, Mch(UK)
@@ -93,7 +93,7 @@ export default function HeroSection() {
               {/* Content of the detail panel, relative Z-index to overlay dots */}
               <div className="relative z-10 flex flex-col gap-6 h-full">
                 <h1 className="text-gray-900 text-3xl font-bold">
-                  Dr. Hyder Kunnumal, Orthopedic Surgeon
+                  Dr. Hydar Kunnumal, Orthopedic Surgeon
                 </h1>
 
                 <ul className="text-gray-600 list-disc list-inside space-y-1">

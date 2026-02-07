@@ -1,12 +1,16 @@
 import React from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
+
 import Navigation from "./components/Navigation";
+import ScrollToTop from "./components/ScrolltoTop";
+
 import HeroSection from "./components/HeroSection";
 import TreatmentSection from "./components/TreatmentSection";
 import SurgeryFinderSection from "./components/SurgeryFinderSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import StatisticsSection from "./components/StatisticsSection";
 import ContactSection from "./components/ContactSection";
+
 import TotalKneeReplacement from "./pages/TotalKneeReplacement";
 import PartialKneeReplacement from "./pages/PartialKneeReplacement";
 import Acl from "./pages/Acl";
@@ -22,10 +26,14 @@ export default function App() {
 
   return (
     <>
-      {/* Show global Navigation only if NOT on About page */}
+      {/* Always scroll to top on route change */}
+      <ScrollToTop />
+
+      {/* Hide navbar only on About page */}
       {location.pathname !== "/about" && <Navigation />}
 
       <Routes>
+        {/* HOME */}
         <Route
           path="/"
           element={
@@ -39,9 +47,11 @@ export default function App() {
             </>
           }
         />
+
+        {/* ABOUT */}
         <Route path="/about" element={<About />} />
 
-        {/* Existing treatment routes */}
+        {/* TREATMENTS */}
         <Route path="/treatment/total-knee-replacement" element={<TotalKneeReplacement />} />
         <Route path="/treatment/partial-knee-replacement" element={<PartialKneeReplacement />} />
         <Route path="/treatment/acl-reconstruction" element={<Acl />} />
@@ -50,6 +60,9 @@ export default function App() {
         <Route path="/treatment/conservative-treatment" element={<Conservative />} />
         <Route path="/treatment/meniscus-surgery" element={<Meniscus />} />
         <Route path="/treatment/revision-surgery" element={<Revision />} />
+
+        {/* FALLBACK */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
   );

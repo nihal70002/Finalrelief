@@ -31,6 +31,7 @@ export default function ContactSection() {
   };
 
   return (
+    
     <section id="contact" ref={sectionRef} className="min-h-screen py-20 bg-white">
       <div className="container mx-auto px-4">
         <div
@@ -67,8 +68,8 @@ export default function ContactSection() {
                 <div className="flex items-center gap-3 text-gray-600">
                   <Phone className="w-5 h-5 text-emerald-600 flex-shrink-0" />
                   <div>
-                    <p>Tel: +91 483 1234567</p>
-                    <p>Mob: +91 94483 12345</p>
+                    7591907000
+                   
                   </div>
                 </div>
 

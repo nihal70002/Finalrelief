@@ -3,94 +3,63 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const testimonials = [
-  {
-    name: "Sarah L.",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
-    rating: 5,
-    review: "Dr. Hyder gave me my life back. I can now play with my grandchildren without any pain. The entire process was smooth and professional."
-  },
-  {
-    name: "Michael B.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-    rating: 4.5,
-    review: "The care and attention to detail from Dr. Hyder and his team were outstanding. Highly recommended for anyone considering knee surgery."
-  },
-  {
-    name: "Emily R.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
-    rating: 5,
-    review: "I was nervous about surgery, but Dr. Hyder's confidence and clear explanations put me at ease. My recovery was faster than I expected."
-  },
-  {
-    name: "John D.",
-    image: "https://randomuser.me/api/portraits/men/12.jpg",
-    rating: 5,
-    review: "Amazing experience! Dr. Hyder and the staff were friendly and supportive throughout the whole process."
-  },
-  {
-    name: "Anna K.",
-    image: "https://randomuser.me/api/portraits/women/22.jpg",
-    rating: 4,
-    review: "I felt very comfortable and confident with the care I received from Dr. Hyder. Highly recommended."
-  },
-  {
-    name: "Mark W.",
-    image: "https://randomuser.me/api/portraits/men/45.jpg",
-    rating: 5,
-    review: "Excellent service and follow-up from Dr. Hyder. My knee feels great now!"
-  },
+  { name: "Ayesha Rahman", rating: 5, review: "Dr. Hyder gave me my life back. I can now move freely without knee pain. The treatment and care were excellent." },
+  { name: "Muhammad Shafi", rating: 5, review: "Dr. Hyder and his team explained everything clearly. The surgery and recovery process were handled very professionally." },
+  { name: "Fathima Noor", rating: 5, review: "I was very anxious before surgery, but Dr. Hyder gave me confidence. My recovery was smooth and faster than expected." },
+  { name: "Abdul Rasheed", rating: 5, review: "Excellent experience from consultation to recovery. The staff were friendly and supportive throughout." },
+  { name: "Safiya Basheer", rating: 4, review: "I felt very comfortable and safe under Dr. Hyder’s care. Highly recommended for knee-related treatments." },
+  { name: "Shamsudheen K", rating: 5, review: "Very satisfied with the treatment and follow-up care. My knee pain has completely reduced." },
 ];
 
 const TestimonialsSection = () => {
   return (
-    <section className="py-16 sm:py-24 bg-background-light dark:bg-gray-900" id="testimonials">
+    // CHANGED: bg-gray-50 provides a subtle contrast against white cards
+    <section className="py-16 sm:py-24 bg-gray-50 dark:bg-gray-900" id="testimonials">
       <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-center text-gray-900 dark:text-white">
+        <h2 className="text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-center text-gray-900 dark:text-white mb-12">
           What Our Patients Say About Dr. Hyder
         </h2>
 
-        {/* Horizontal scrolling carousel */}
-        <div className="relative overflow-hidden mt-12">
+        <div className="relative overflow-hidden">
           <motion.div
             className="flex gap-6"
-            animate={{ x: ["0%", "-50%"] }} // move left
+            animate={{ x: ["0%", "-50%"] }}
             transition={{
               repeat: Infinity,
               repeatType: "loop",
-              duration: 20,
+              duration: 30, // Slowed down slightly for better readability
               ease: "linear"
             }}
           >
             {testimonials.concat(testimonials).map((testimonial, index) => (
               <div
                 key={index}
-                className="bg-white dark:bg-background-dark p-6 rounded-xl shadow-lg flex-shrink-0 w-80"
+                // CHANGED: white card on gray bg + border for extra definition
+                className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 flex-shrink-0 w-85"
               >
                 <div className="flex items-center mb-4">
-                  <img
-                    alt="Patient photo"
-                    className="w-12 h-12 rounded-full mr-4"
-                    src={testimonial.image}
-                  />
                   <div>
-                    <p className="font-bold text-gray-900 dark:text-white">{testimonial.name}</p>
-                    <div className="flex text-yellow-400">
-                      {Array.from({ length: 5 }, (_, i) => {
-                        if (i < Math.floor(testimonial.rating)) {
-                          return <span key={i} className="material-symbols-outlined text-sm">star</span>;
-                        } else if (i < testimonial.rating) {
-                          return <span key={i} className="material-symbols-outlined text-sm">star_half</span>;
-                        } else {
-                          return <span key={i} className="material-symbols-outlined text-sm">star_outline</span>;
-                        }
-                      })}
+                    <p className="font-bold text-gray-900 dark:text-white text-lg">
+                      {testimonial.name}
+                    </p>
+                    <div className="flex text-yellow-400 text-sm">
+                      {/* Logic to render stars based on rating */}
+                      {[...Array(5)].map((_, i) => (
+                        <span key={i}>{i < Math.floor(testimonial.rating) ? "★" : "☆"}</span>
+                      ))}
                     </div>
                   </div>
                 </div>
-                <p className="text-gray-600 dark:text-gray-300">{testimonial.review}</p>
+                <p className="text-gray-600 dark:text-gray-300 italic leading-relaxed">
+                  "{testimonial.review}"
+                </p>
               </div>
             ))}
           </motion.div>
+          
+          {/* Gradient Overlays to make the edges fade out nicely */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-gray-50 dark:from-gray-900 to-transparent"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-gray-50 dark:from-gray-900 to-transparent"></div>
         </div>
       </div>
     </section>
