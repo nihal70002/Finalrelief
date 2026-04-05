@@ -33,15 +33,16 @@ export default function HeroSection() {
                     : "translate-x-0 opacity-100"
                 }`}
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight font-sans text-slate-800">
-                Regain Your Active Life. <br />
-                <span className="text-teal-500 font-medium">Expert Knee Care Starts Here.</span>
+              <h1 className="text-5xl sm:text-6xl lg:text-[4.5rem] xl:text-[5rem] font-extrabold leading-[1.05] tracking-tight text-slate-900">
+                Regain Your <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-500">
+                  Active Life.
+                </span>
               </h1>
-              <h2 className="text-slate-500 text-lg sm:text-xl font-light leading-relaxed font-sans max-w-lg">
-                With over 1,000 successful procedures, our team is dedicated to
-                providing you with the best care to get you back to living your
-                life to the fullest.
-              </h2>
+              
+              <p className="text-slate-600 text-lg sm:text-xl font-normal leading-relaxed max-w-lg mt-2">
+                Expert knee care starts here. With over 1,000 successful procedures, our dedicated team provides world-class treatments to get you moving again.
+              </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mt-6">
                 <button className="flex items-center justify-center rounded-full h-14 px-8 bg-teal-500 text-white text-lg font-medium hover:bg-teal-600 transition-colors font-sans border border-transparent">
