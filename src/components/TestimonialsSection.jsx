@@ -13,8 +13,8 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    // CHANGED: bg-gray-50 provides a subtle contrast against white cards
-    <section className="py-16 sm:py-24 bg-gray-50 dark:bg-gray-900" id="testimonials">
+    // Section background is white to match the cards
+    <section className="py-16 sm:py-24 bg-white dark:bg-gray-900" id="testimonials">
       <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-center text-gray-900 dark:text-white mb-12">
           What Our Patients Say About Dr. Hyder
@@ -27,7 +27,7 @@ const TestimonialsSection = () => {
             transition={{
               repeat: Infinity,
               repeatType: "loop",
-              duration: 30, // Slowed down slightly for better readability
+              duration: 15,
               ease: "linear"
             }}
           >
@@ -58,8 +58,8 @@ const TestimonialsSection = () => {
           </motion.div>
           
           {/* Gradient Overlays to make the edges fade out nicely */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-gray-50 dark:from-gray-900 to-transparent"></div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-gray-50 dark:from-gray-900 to-transparent"></div>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white dark:from-gray-900 to-transparent"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white dark:from-gray-900 to-transparent"></div>
         </div>
       </div>
     </section>

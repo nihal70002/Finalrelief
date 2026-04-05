@@ -79,7 +79,7 @@ const surgeryDatabase = {
   acl: {
     name: "ACL Reconstruction Surgery",
     description: "Surgical reconstruction of the torn anterior cruciate ligament using a graft to restore knee stability.",
-    recoveryTime: "6-9 months",
+    recoveryTime: "6-12 weeks",
     bestFor: ["Sports injuries", "Knee instability", "Active lifestyle"],
     urgency: "scheduled",
     successRate: "95%",
@@ -89,7 +89,7 @@ const surgeryDatabase = {
   meniscus: {
     name: "Meniscus Repair/Removal",
     description: "Surgical treatment for torn meniscus cartilage to relieve pain and restore function.",
-    recoveryTime: "3-6 months",
+    recoveryTime: "6-12 weeks",
     bestFor: ["Locking knee", "Catching sensation", "Sports injury"],
     urgency: "scheduled",
     successRate: "90%",
@@ -99,7 +99,7 @@ const surgeryDatabase = {
   tkr: {
     name: "Total Knee Replacement",
     description: "Complete replacement of damaged knee joint with prosthetic components for pain relief and improved mobility.",
-    recoveryTime: "3-6 months",
+    recoveryTime: "6-12 weeks",
     bestFor: ["Chronic severe pain", "Age 50+", "Arthritis"],
     urgency: "consultation",
     successRate: "93%",
@@ -109,7 +109,7 @@ const surgeryDatabase = {
   highTibialOsteotomy: {
     name: "High Tibial Osteotomy (HTO)",
     description: "Realigns the knee joint to relieve pressure from the damaged compartment.",
-    recoveryTime: "6-12 months",
+    recoveryTime: "12-24 weeks",
     bestFor: ["Younger patients with early osteoarthritis"],
     urgency: "scheduled",
     successRate: "88%",
@@ -119,7 +119,7 @@ const surgeryDatabase = {
   unicompartmentalKneeArthroplasty: {
     name: "Unicompartmental Knee Arthroplasty (UKA)",
     description: "Partial knee replacement for arthritis limited to one compartment.",
-    recoveryTime: "3-6 months",
+    recoveryTime: "6-12 weeks",
     bestFor: ["Localized knee arthritis"],
     urgency: "scheduled",
     successRate: "90%",
@@ -428,7 +428,14 @@ const surgeryDatabase = {
                   </svg>
                 </div>
                 <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1">Your Personalized Treatment Options</h3>
-                <p className="text-sm text-gray-600 px-4">Based on your symptoms and profile, we recommend:</p>
+                <p className="text-sm text-gray-600 px-4 mb-4">Based on your symptoms and profile, we recommend:</p>
+                <div className="bg-yellow-50 border border-yellow-200 text-yellow-800 text-xs md:text-sm p-3 rounded-lg max-w-lg mx-auto text-left shadow-sm">
+                  <span className="font-bold flex items-center gap-1 mb-1">
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"></path></svg>
+                    Disclaimer
+                  </span>
+                  This is a computer-generated assessment and not a finalized medical result. Please consult exclusively with Dr. Hyder for a proper clinical diagnosis and treatment plan.
+                </div>
               </div>
 
               <div className="space-y-3">

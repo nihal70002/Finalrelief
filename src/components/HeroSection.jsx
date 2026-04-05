@@ -33,26 +33,26 @@ export default function HeroSection() {
                     : "translate-x-0 opacity-100"
                 }`}
             >
-              <h1 className="text-gray-900 text-2xl sm:text-3xl font-extrabold leading-tight tracking-[-0.033em] font-serif">
-                Regain Your Active Life. Expert Knee Replacement Care Starts
-                Here.
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight font-sans text-slate-800">
+                Regain Your Active Life. <br />
+                <span className="text-teal-500 font-medium">Expert Knee Care Starts Here.</span>
               </h1>
-              <h2 className="text-gray-600 text-lg font-normal leading-normal font-sans">
-                With over 1000 successful procedures, our team is dedicated to
+              <h2 className="text-slate-500 text-lg sm:text-xl font-light leading-relaxed font-sans max-w-lg">
+                With over 1,000 successful procedures, our team is dedicated to
                 providing you with the best care to get you back to living your
                 life to the fullest.
               </h2>
 
-              <div className="flex flex-col sm:flex-row gap-4 mt-4">
-                <button className="flex items-center justify-center rounded-lg h-12 px-6 bg-emerald-400 text-white text-base font-semibold leading-normal tracking-[0.015em] hover:bg-emerald-500 transition-colors font-sans">
-                  <span className="truncate">Schedule Your Consultation</span>
+              <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                <button className="flex items-center justify-center rounded-full h-14 px-8 bg-teal-500 text-white text-lg font-medium hover:bg-teal-600 transition-colors font-sans border border-transparent">
+                  <span>Schedule Consultation</span>
                 </button>
 
                 <button
                   onClick={() => setShowDoctor(true)}
-                  className="flex items-center justify-center rounded-lg h-12 px-6 bg-white text-emerald-400 border border-emerald-400 text-base font-semibold leading-normal tracking-[0.015em] hover:bg-emerald-400 hover:text-white transition-colors font-sans"
+                  className="flex items-center justify-center rounded-full h-14 px-8 bg-transparent text-slate-600 border border-slate-300 text-lg font-medium hover:border-teal-500 hover:text-teal-600 transition-colors font-sans"
                 >
-                  <span className="truncate">Know More About Dr. Hydar</span>
+                  <span>Meet Dr. Hydar</span>
                 </button>
               </div>
             </div>
