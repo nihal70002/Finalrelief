@@ -6,7 +6,7 @@ import ScrollToTop from "./components/ScrolltoTop";
 
 import HeroSection from "./components/HeroSection";
 import TreatmentSection from "./components/TreatmentSection";
-import SurgeryFinderSection from "./components/SurgeryFinderSection";
+
 import TestimonialsSection from "./components/TestimonialsSection";
 import StatisticsSection from "./components/StatisticsSection";
 import ContactSection from "./components/ContactSection";
@@ -39,7 +39,7 @@ export default function App() {
           element={
             <>
               <HeroSection />
-              <SurgeryFinderSection />
+             
               <TreatmentSection />
               <TestimonialsSection />
               <StatisticsSection />

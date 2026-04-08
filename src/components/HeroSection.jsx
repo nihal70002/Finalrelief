@@ -49,12 +49,7 @@ export default function HeroSection() {
                   <span>Schedule Consultation</span>
                 </button>
 
-                <button
-                  onClick={() => setShowDoctor(true)}
-                  className="flex items-center justify-center rounded-full h-14 px-8 bg-transparent text-slate-600 border border-slate-300 text-lg font-medium hover:border-teal-500 hover:text-teal-600 transition-colors font-sans"
-                >
-                  <span>Meet Dr. Hydar</span>
-                </button>
+                
               </div>
             </div>
 

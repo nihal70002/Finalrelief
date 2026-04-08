@@ -144,7 +144,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
                       <div className="bg-slate-100 p-6 rounded-lg">
                         <h3 className="font-bold text-lg">MBBS (Bachelor of Medicine, Bachelor of Surgery)</h3>
-                        <p className="text-[#1791cf] font-medium">Prestigious Institution, India</p>
+                        <p className="text-[#1791cf] font-medium">Calicut Medical Collage, India</p>
                         <p className="text-sm text-slate-500">Start Year - End Year</p>
                       </div>
                       <div className="bg-slate-100 p-6 rounded-lg">
@@ -159,8 +159,13 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                       </div>
                       <div className="bg-slate-100 p-6 rounded-lg">
                         <h3 className="font-bold text-lg">Specialized Fellowship/Training</h3>
-                        <p className="text-[#1791cf] font-medium">Robotic Surgery, Global Center of Excellence</p>
+                        <p className="text-[#1791cf] font-medium">Malaysia</p>
                         <p className="text-sm text-slate-500">Year</p>
+                      </div>
+                       <div className="bg-slate-100 p-6 rounded-lg">
+                        <h3 className="font-bold text-lg">MBA in Hospital Management</h3>
+                        <p className="text-[#1791cf] font-medium">Manipal University</p>
+                        <p className="text-sm text-slate-500">2024-2026</p>
                       </div>
                     </div>
                   </section>
