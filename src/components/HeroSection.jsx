@@ -10,41 +10,41 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="bg-background-light font-sans overflow-hidden"
+      className="bg-background-light font-sans overflow-hidden relative"
     >
-      <main className="flex-1">
-        {/* Vertical padding is increased to 'py-20 lg:py-32' to create more surrounding white space */}
-        <section className="px-6 sm:px-10 lg:px-20 py-20 lg:py-32">
-          <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-            
-            {/* Background Dots - Applied to the entire main container (Original Size/High Density) */}
-            <div className="absolute inset-0 opacity-7">
-              <div
-                className={`absolute inset-0 ${dotsBackgroundUrl} bg-repeat`}
-              />
-            </div>
+      {/* Background Dots - Now applied to the full screen section */}
+      <div className="absolute inset-0 opacity-7 pointer-events-none">
+        <div
+          className={`absolute inset-0 ${dotsBackgroundUrl} bg-repeat`}
+        />
+      </div>
 
+      <main className="flex-1 relative z-10">
+        {/* Adjusted padding for mobile screens */}
+        <section className="px-6 sm:px-10 lg:px-20 py-12 sm:py-20 lg:py-32">
+          <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
+            
             {/* Hero Content */}
             <div
-              className={`relative z-10 flex flex-col gap-6 text-left transition-transform duration-700 ease-in-out w-full lg:w-1/2
+              className={`relative z-10 flex flex-col gap-6 text-center lg:text-left transition-transform duration-700 ease-in-out w-full lg:w-1/2
                 ${
                   showDoctor
                     ? "-translate-x-full opacity-0"
                     : "translate-x-0 opacity-100"
                 }`}
             >
-              <h1 className="text-5xl sm:text-6xl lg:text-[4.5rem] xl:text-[5rem] font-extrabold leading-[1.05] tracking-tight text-slate-900">
-                Regain Your <br />
+              <h1 className="text-4xl sm:text-5xl lg:text-[4.5rem] xl:text-[5rem] font-extrabold leading-[1.1] tracking-tight text-slate-900">
+                Regain Your <br className="hidden sm:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-500">
                   Active Life.
                 </span>
               </h1>
               
-              <p className="text-slate-600 text-lg sm:text-xl font-normal leading-relaxed max-w-lg mt-2">
+              <p className="text-slate-600 text-base sm:text-lg lg:text-xl font-normal leading-relaxed max-w-lg mx-auto lg:mx-0 mt-2">
                 Expert knee care starts here. With over 1,000 successful procedures, our dedicated team provides world-class treatments to get you moving again.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mt-6">
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-6">
                 <button className="flex items-center justify-center rounded-full h-14 px-8 bg-teal-500 text-white text-lg font-medium hover:bg-teal-600 transition-colors font-sans border border-transparent">
                   <span>Schedule Consultation</span>
                 </button>

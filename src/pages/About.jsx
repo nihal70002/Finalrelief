@@ -65,10 +65,10 @@ export default function About() {
                   <div className="lg:col-span-3 flex flex-col gap-6 text-left">
                     <div className="flex flex-col gap-4">
                       <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-tighter">
-                        Meet Dr. Hyder Kunnumal: Pioneer in AI Robotics and Orthopedics
+                        Meet Dr. Hyder Kunnumal: Consultant Orthopedic & Joint Replacement Surgeon
                       </h1>
                       <p className="text-base md:text-lg font-normal leading-normal text-slate-600">
-                        Dedicated to restoring mobility and improving quality of life with compassionate, expert care, specializing in advanced robotic and minimally invasive surgeries.
+                        Dedicated to restoring mobility and improving quality of life with compassionate, expert care, specializing in joint replacement surgery, trauma care, and sports injury management.
                       </p>
                     </div>
                     <button className="flex min-w-[84px] max-w-sm cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-[#1791cf] text-slate-50 text-base font-bold leading-normal tracking-wide hover:bg-[#1791cf]/90 transition-colors">
@@ -88,7 +88,7 @@ export default function About() {
                         
                         <div className="flex flex-col">
                           <h3 className="text-base font-semibold leading-normal">Dr. Hyder Kunnumal</h3>
-                          <p className="text-sm font-normal leading-normal text-slate-500">Orthopedic & Robotic Surgeon</p>
+                          <p className="text-sm font-normal leading-normal text-slate-500">Consultant Orthopedic & Joint Replacement Surgeon</p>
                         </div>
                       </div>
                       <nav className="flex flex-col gap-1 mt-4">
@@ -133,7 +133,9 @@ export default function About() {
                   {/* Introduction */}
                   <section id="introduction" className="scroll-mt-32">
                     <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">Introduction</h2>
-                    <p className="text-slate-600 text-base font-normal leading-relaxed pb-3 pt-1 px-4">A compelling narrative about my passion for **Orthopedics and cutting-edge Robotic Surgery**. From my comprehensive international training to implementing the latest AI-driven surgical techniques, my goal is to combine technical excellence with a deeply humanistic approach. I aim to ensure every individual feels heard, understood, and confident in their treatment journey, focusing on achieving the best long-term outcomes for mobility.</p>
+                    <p className="text-slate-600 text-base font-normal leading-relaxed pb-3 pt-1 px-4">
+With a strong commitment to Orthopedic care and patient well-being, my focus is on providing accurate diagnosis, effective treatment, and personalized surgical and non-surgical solutions for musculoskeletal conditions. Supported by comprehensive training and clinical experience, I aim to help patients regain mobility, reduce pain, and return to their daily activities with confidence through safe and evidence-based orthopedic care.
+</p>
                   </section>
                   
                   {/* Education & Qualifications */}
@@ -172,8 +174,8 @@ export default function About() {
                         <div className="relative pl-12">
                           <div className="absolute left-6 top-1 w-4 h-4 rounded-full bg-[#1791cf] -translate-x-1/2 transform"></div>
                           <p className="text-sm text-slate-500">Latest Achievement</p>
-                          <h3 className="font-semibold text-lg">Pioneering AI Robotics Surgeries</h3>
-                          <p className="text-slate-600">Successfully performed cutting-edge AI-assisted robotic surgeries, setting a new benchmark for precision and minimal invasiveness in the region.</p>
+                          <h3 className="font-semibold text-lg">Extensive Experience in Orthopedic Surgery</h3>
+                          <p className="text-slate-600">Successfully performed providing advanced orthopedic surgical care with a focus on precision and patient recovery, setting a new benchmark for precision and minimal invasiveness in the region.</p>
                         </div>
                         <div className="relative pl-12">
                           <div className="absolute left-6 top-1 w-4 h-4 rounded-full bg-[#1791cf] -translate-x-1/2 transform"></div>
@@ -196,7 +198,7 @@ export default function About() {
                     <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">Achievements & Success Stories</h2>
                     <div className="px-4 space-y-4">
                       <div className="bg-slate-100 p-6 rounded-lg">
-                        <h3 className="font-bold text-lg">Pioneer of AI Robotics Surgery</h3>
+                        <h3 className="font-bold text-lg">Experienced Orthopedic Surgeon with Advanced Surgical Expertise</h3>
                         <p className="text-[#1791cf] font-medium">One of the first to successfully implement AI-guided robotic procedures in the area, leading to superior patient outcomes.</p>
                       </div>
                       <blockquote className="border-l-4 border-[#1791cf] pl-4 italic text-slate-600">
@@ -209,7 +211,7 @@ export default function About() {
                   {/* Philosophy & Approach */}
                   <section id="philosophy" className="scroll-mt-32">
                     <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">My Philosophy & Approach</h2>
-                    <p className="text-slate-600 text-base font-normal leading-relaxed pb-3 pt-1 px-4">I believe in a patient-centric approach where you are a partner in your own healthcare journey. My philosophy is built on three pillars: **Advanced Robotic and AI techniques**, **personalized care plans**, and **clear, honest communication**. The goal is always to leverage the highest level of surgical precision to ensure the least invasive procedure, prioritizing your long-term well-being and a swift, active return to life.</p>
+                    <p className="text-slate-600 text-base font-normal leading-relaxed pb-3 pt-1 px-4">I believe in a patient-centric approach where you are a partner in your own healthcare journey. My philosophy is built on three pillars: **evidence-based surgical techniques**, **personalized care plans**, and **clear, honest communication**. The goal is always to leverage the highest level of surgical precision to ensure the least invasive procedure, prioritizing your long-term well-being and a swift, active return to life.</p>
                   </section>
 
                   {/* Current Affiliations */}
@@ -220,7 +222,7 @@ export default function About() {
                         <summary className="font-semibold cursor-pointer flex justify-between items-center">
                           Malabar Hospitals, Manjeri
                         </summary>
-                        <p className="mt-2 text-slate-600">Consultant Orthopedic Surgeon, specializing in complex joint replacements and sports injury management. A key location for my AI robotics practice.</p>
+                        <p className="mt-2 text-slate-600">Consultant Orthopedic Surgeon, specializing in complex joint replacements and sports injury management. A key location for my orthopedic consultation and surgical services.</p>
                       </details>
                       <details className="group bg-slate-100 p-4 rounded-lg" open>
                         <summary className="font-semibold cursor-pointer flex justify-between items-center">
@@ -236,7 +238,7 @@ export default function About() {
                     <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">A Personal Note</h2>
                     <div className="px-4">
                       <blockquote className="bg-[#1791cf]/10 border-l-4 border-[#1791cf] p-6 rounded-r-lg">
-                        <p className="text-lg italic text-slate-800">"The greatest reward of my work is seeing my patients reclaim their lives from pain and limitation. Leveraging the power of AI and robotics allows me to achieve unparalleled precision, translating to better, faster recoveries for you. My promise is to provide not just my surgical skill, but my unwavering support and dedication to your journey to complete mobility."</p>
+                        <p className="text-lg italic text-slate-800">"The greatest reward of my work is seeing my patients reclaim their lives from pain and limitation. Using modern surgical techniques helps improve precision and supports faster recovery for many patients, translating to better, faster recoveries for you. My promise is to provide not just my surgical skill, but my unwavering support and dedication to your journey to complete mobility."</p>
                         <cite className="block not-italic text-right mt-4 font-bold text-[#1791cf]">- Dr. Hyder Kunnumal</cite>
                       </blockquote>
                     </div>
