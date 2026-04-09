@@ -30,9 +30,9 @@ export default function HeroSection() {
               <h1 className="text-3xl sm:text-5xl lg:text-[4.5rem] xl:text-[5rem] font-extrabold leading-[1.2] tracking-tight text-slate-900 dark:text-white">
                 Regain Your
                 <br className="hidden sm:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-500">
-                  Active Life
-                </span>
+                <span className="text-transparent bg-clip-text bg-[length:200%_auto] bg-gradient-to-r from-teal-600 via-emerald-300 to-teal-600 animate-shimmer">
+  Active Life
+</span>
               </h1>
 
               {/* TRUST LINE */}
@@ -50,9 +50,9 @@ export default function HeroSection() {
               {/* BUTTON */}
               <div className="flex justify-center lg:justify-start">
 
-                <button className="rounded-full h-14 px-8 bg-teal-500 text-white text-lg font-medium hover:bg-teal-600 transition">
-                  Schedule Consultation
-                </button>
+                <button className="hidden md:inline-flex rounded-full h-14 px-8 bg-teal-500 text-white text-lg font-medium hover:bg-teal-600 transition">
+  Schedule Consultation
+</button>
 
               </div>
 
