@@ -20,6 +20,7 @@ import Conservative from "./pages/Conservative";
 import Meniscus from "./pages/Meniscus";
 import Revision from "./pages/Revision";
 import About from "./pages/About";
+import Gallery from "./pages/Gallery";
 
 export default function App() {
   const location = useLocation();
@@ -50,6 +51,8 @@ export default function App() {
 
         {/* ABOUT */}
         <Route path="/about" element={<About />} />
+
+        <Route path="/Gallery" element={<Gallery />} />
 
         {/* TREATMENTS */}
         <Route path="/treatment/total-knee-replacement" element={<TotalKneeReplacement />} />

@@ -34,7 +34,7 @@ export default function About() {
                   <div className="flex items-center gap-9">
                     <a className="text-sm font-medium leading-normal hover:text-[#1791cf]" href="#introduction" onClick={(e) => handleAnchorClick(e, 'introduction')}>About</a>
                     <a className="text-sm font-medium leading-normal hover:text-[#1791cf]" href="#services">Services</a>
-                    <a className="text-sm font-medium leading-normal hover:text-[#1791cf]" href="#testimonials">Testimonials</a>
+                    <a className="text-sm font-medium leading-normal hover:text-[#1791cf]" href="/Gallery">Testimonials</a>
                     <a className="text-sm font-medium leading-normal hover:text-[#1791cf]" href="#contact" onClick={(e) => handleAnchorClick(e, 'contact')}>Contact</a>
                   </div>
                   <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#1791cf] text-slate-50 text-sm font-bold leading-normal tracking-wide hover:bg-[#1791cf]/90 transition-colors">
@@ -145,7 +145,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                       <div className="bg-slate-100 p-6 rounded-lg">
                         <h3 className="font-bold text-lg">MBBS (Bachelor of Medicine, Bachelor of Surgery)</h3>
                         <p className="text-[#1791cf] font-medium">Calicut Medical Collage, India</p>
-                        <p className="text-sm text-slate-500">Start Year - End Year</p>
+                        <p className="text-sm text-slate-500">1884 - 1991</p>
                       </div>
                       <div className="bg-slate-100 p-6 rounded-lg">
                         <h3 className="font-bold text-lg">MS Ortho (Master of Surgery in Orthopedics)</h3>

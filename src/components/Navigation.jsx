@@ -7,10 +7,11 @@ export default function Navigation({ activeSection }) {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { id: "surgery-finder", label: "Find Surgery", path: null },
+    
     { id: "about", label: "About Us", path: "/about" },
     { id: "treatment", label: "Treatment", path: null },
     { id: "contact", label: "Contact Us", path: null },
+    { id: "Gallery", label: "Gallery", path: "/Gallery" },
   ];
 
   const scrollToSection = (sectionId) => {
