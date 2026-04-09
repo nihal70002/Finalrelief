@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function About() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   // Helper function for smooth scrolling to sections (optional, but good UX)
   const handleAnchorClick = (e, id) => {
@@ -15,42 +18,133 @@ export default function About() {
 
   return (
     // Light theme enforced
-    <div className="bg-slate-50 font-sans text-[#0e171b] min-h-screen">
+    <div className="bg-slate-50 dark:bg-slate-900 font-sans text-[#0e171b] dark:text-white min-h-screen">
       <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
         <div className="layout-container flex h-full grow flex-col">
-          {/* Header */}
-          <header className="sticky top-0 z-50 bg-slate-50/80 backdrop-blur-sm">
-            <div className="px-4 md:px-10 lg:px-20 xl:px-40 flex justify-center">
-              <div className="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 px-4 sm:px-6 md:px-10 py-3 w-full max-w-[1280px]">
-                <div className="flex items-center gap-4 text-[#1791cf]">
-                  <div className="size-6">
-                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z" fill="currentColor"></path>
-                    </svg>
-                  </div>
-                  <h2 className="text-lg font-bold leading-tight tracking-tight">Dr. Hyder Kunnumal</h2>
-                </div>
-                <div className="hidden md:flex flex-1 justify-end gap-8">
-                  <div className="flex items-center gap-9">
-                    <a className="text-sm font-medium leading-normal hover:text-[#1791cf]" href="#introduction" onClick={(e) => handleAnchorClick(e, 'introduction')}>About</a>
-                    <a className="text-sm font-medium leading-normal hover:text-[#1791cf]" href="#services">Services</a>
-                    <a className="text-sm font-medium leading-normal hover:text-[#1791cf]" href="/Gallery">Testimonials</a>
-                    <a className="text-sm font-medium leading-normal hover:text-[#1791cf]" href="#contact" onClick={(e) => handleAnchorClick(e, 'contact')}>Contact</a>
-                  </div>
-                  <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#1791cf] text-slate-50 text-sm font-bold leading-normal tracking-wide hover:bg-[#1791cf]/90 transition-colors">
-                    <span className="truncate">Schedule a Consultation</span>
-                  </button>
-                </div>
-                <div className="md:hidden">
-                  <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="p-2 rounded-md hover:bg-slate-200">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </header>
+          <header className="fixed top-0 left-0 right-0 z-50
+bg-white dark:bg-slate-900
+border-b border-slate-200 dark:border-slate-700">
+  <div className="px-4 md:px-10 lg:px-20 xl:px-40 flex justify-center">
+    <div className="w-full max-w-[1280px]">
+
+      {/* Navbar row */}
+      <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 py-3">
+
+        {/* Logo */}
+       <div className="flex items-center gap-2 text-[#1791cf] -ml-2">
+
+  {/* Back button */}
+  <button
+    onClick={() => navigate("/")}
+    className="flex items-center justify-center w-9 h-9 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-6 h-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={2.5}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 18l-6-6 6-6" />
+    </svg>
+  </button>
+
+  {/* Title */}
+  <h2 className="text-lg font-bold leading-none text-[#1791cf]">
+    Dr. Hyder Kunnumal
+  </h2>
+
+</div>
+
+        {/* Desktop menu */}
+        <div className="hidden md:flex items-center gap-8">
+
+          <a
+            href="#introduction"
+            onClick={(e) => handleAnchorClick(e, "introduction")}
+            className="text-sm font-medium hover:text-[#1791cf]"
+          >
+            About
+          </a>
+
+         
+
+          <a
+            href="/Gallery"
+            className="text-sm font-medium hover:text-[#1791cf]"
+          >
+            Testimonials
+          </a>
+
+          <a
+            href="#contact"
+            onClick={(e) => handleAnchorClick(e, "contact")}
+            className="text-sm font-medium hover:text-[#1791cf]"
+          >
+            Contact
+          </a>
+
+        </div>
+
+        {/* Mobile hamburger */}
+        <div className="md:hidden">
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700"
+          >
+            ☰
+          </button>
+        </div>
+
+      </div>
+
+      {/* Mobile overlay menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-md">
+
+          <div className="px-6 py-5 space-y-4">
+
+            <a
+              href="#introduction"
+              onClick={(e) => {
+                handleAnchorClick(e, "introduction");
+                setMobileMenuOpen(false);
+              }}
+              className="block text-sm font-medium"
+            >
+              About
+            </a>
+
+            
+
+            <a
+              href="/Gallery"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-sm font-medium"
+            >
+              Testimonials
+            </a>
+
+            <a
+              href="#contact"
+              onClick={(e) => {
+                handleAnchorClick(e, "contact");
+                setMobileMenuOpen(false);
+              }}
+              className="block text-sm font-medium"
+            >
+              Contact
+            </a>
+
+          </div>
+
+        </div>
+      )}
+
+    </div>
+  </div>
+</header>
 
           {/* Main Content */}
           <main className="flex-1 px-4 md:px-10 lg:px-20 xl:px-40 py-5">
@@ -81,7 +175,7 @@ export default function About() {
               <div className="flex flex-col lg:flex-row gap-12 mt-10">
                 {/* Sidebar */}
                 <aside className="lg:w-1/4 sticky top-24 h-fit">
-                  <div className="flex h-full min-h-[500px] flex-col justify-between bg-slate-100 p-4 rounded-lg border border-slate-200">
+                  <div className="flex h-full min-h-[500px] flex-col justify-between bg-slate-100 dark:bg-slate-800 p-4 rounded-lg border border-slate-200">
                     <div className="flex flex-col gap-4">
                       <div className="flex items-center gap-3">
                         {/* Smaller Image placeholder for Dr. Hyder Kunnumal */}
@@ -92,35 +186,72 @@ export default function About() {
                         </div>
                       </div>
                       <nav className="flex flex-col gap-1 mt-4">
-                        {/* ICON REMOVED: Introduction */}
-                        <a className="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#1791cf]/20 text-[#1791cf]" href="#introduction" onClick={(e) => handleAnchorClick(e, 'introduction')}>
-                          <p className="text-sm font-medium leading-normal">Introduction</p>
-                        </a>
-                        {/* ICON REMOVED: Education */}
-                        <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200" href="#education" onClick={(e) => handleAnchorClick(e, 'education')}>
-                          <p className="text-sm font-medium leading-normal">Education</p>
-                        </a>
-                        {/* ICON REMOVED: Professional Journey */}
-                        <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200" href="#journey" onClick={(e) => handleAnchorClick(e, 'journey')}>
-                          <p className="text-sm font-medium leading-normal">Professional Journey</p>
-                        </a>
-                        {/* ICON REMOVED: Achievements */}
-                        <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200" href="#achievements" onClick={(e) => handleAnchorClick(e, 'achievements')}>
-                          <p className="text-sm font-medium leading-normal">Achievements</p>
-                        </a>
-                        {/* ICON REMOVED: Philosophy */}
-                        <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200" href="#philosophy" onClick={(e) => handleAnchorClick(e, 'philosophy')}>
-                          <p className="text-sm font-medium leading-normal">Philosophy</p>
-                        </a>
-                        {/* ICON REMOVED: Affiliations */}
-                        <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200" href="#community" onClick={(e) => handleAnchorClick(e, 'community')}>
-                          <p className="text-sm font-medium leading-normal">Affiliations</p>
-                        </a>
-                        {/* ICON REMOVED: A Personal Note */}
-                        <a className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-200" href="#personal-note" onClick={(e) => handleAnchorClick(e, 'personal-note')}>
-                          <p className="text-sm font-medium leading-normal">A Personal Note</p>
-                        </a>
-                      </nav>
+
+  <a
+    className="flex items-center gap-3 px-3 py-2 rounded-lg
+               bg-[#1791cf]/20 text-[#1791cf]
+               dark:bg-[#1791cf]/30 dark:text-[#4fc3f7]"
+    href="#introduction"
+    onClick={(e) => handleAnchorClick(e, "introduction")}
+  >
+    <p className="text-sm font-medium">Introduction</p>
+  </a>
+
+  <a
+    className="flex items-center gap-3 px-3 py-2 rounded-lg
+               hover:bg-slate-200 dark:hover:bg-slate-700"
+    href="#education"
+    onClick={(e) => handleAnchorClick(e, "education")}
+  >
+    <p className="text-sm font-medium">Education</p>
+  </a>
+
+  <a
+    className="flex items-center gap-3 px-3 py-2 rounded-lg
+               hover:bg-slate-200 dark:hover:bg-slate-700"
+    href="#journey"
+    onClick={(e) => handleAnchorClick(e, "journey")}
+  >
+    <p className="text-sm font-medium">Professional Journey</p>
+  </a>
+
+  <a
+    className="flex items-center gap-3 px-3 py-2 rounded-lg
+               hover:bg-slate-200 dark:hover:bg-slate-700"
+    href="#achievements"
+    onClick={(e) => handleAnchorClick(e, "achievements")}
+  >
+    <p className="text-sm font-medium">Achievements</p>
+  </a>
+
+  <a
+    className="flex items-center gap-3 px-3 py-2 rounded-lg
+               hover:bg-slate-200 dark:hover:bg-slate-700"
+    href="#philosophy"
+    onClick={(e) => handleAnchorClick(e, "philosophy")}
+  >
+    <p className="text-sm font-medium">Philosophy</p>
+  </a>
+
+  <a
+    className="flex items-center gap-3 px-3 py-2 rounded-lg
+               hover:bg-slate-200 dark:hover:bg-slate-700"
+    href="#community"
+    onClick={(e) => handleAnchorClick(e, "community")}
+  >
+    <p className="text-sm font-medium">Affiliations</p>
+  </a>
+
+  <a
+    className="flex items-center gap-3 px-3 py-2 rounded-lg
+               hover:bg-slate-200 dark:hover:bg-slate-700"
+    href="#personal-note"
+    onClick={(e) => handleAnchorClick(e, "personal-note")}
+  >
+    <p className="text-sm font-medium">A Personal Note</p>
+  </a>
+
+</nav>
                     </div>
                     <button className="w-full flex mt-6 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#1791cf] text-slate-50 text-sm font-bold leading-normal tracking-wide hover:bg-[#1791cf]/90 transition-colors">
                       <span className="truncate">Schedule a Consultation</span>
@@ -142,27 +273,39 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                   <section id="education" className="scroll-mt-32">
                     <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">Education & Qualifications</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
-                      <div className="bg-slate-100 p-6 rounded-lg">
+                      <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
                         <h3 className="font-bold text-lg">MBBS (Bachelor of Medicine, Bachelor of Surgery)</h3>
                         <p className="text-[#1791cf] font-medium">Calicut Medical Collage, India</p>
                         <p className="text-sm text-slate-500">1884 - 1991</p>
                       </div>
-                      <div className="bg-slate-100 p-6 rounded-lg">
-                        <h3 className="font-bold text-lg">MS Ortho (Master of Surgery in Orthopedics)</h3>
-                        <p className="text-[#1791cf] font-medium">Leading University/Hospital</p>
-                        <p className="text-sm text-slate-500">Year - Year</p>
-                      </div>
-                      <div className="bg-slate-100 p-6 rounded-lg">
+                      <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
+  <h3 className="font-bold text-lg">
+    MS Orthopaedics (Master of Surgery in Orthopaedics)
+  </h3>
+  <p className="text-[#1791cf] font-medium">
+    JJM Medical College, Davangere, India
+  </p>
+  <p className="text-sm text-slate-500">
+    1994 – 1997
+  </p>
+</div>
+                      <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
                         <h3 className="font-bold text-lg">MCh (Orth.) (Master of Chirurgiae in Orthopedics)</h3>
                         <p className="text-[#1791cf] font-medium">University of Dundee, UK</p>
-                        <p className="text-sm text-slate-500">Year - Year</p>
+                        <p className="text-sm text-slate-500">1994-1997</p>
                       </div>
-                      <div className="bg-slate-100 p-6 rounded-lg">
-                        <h3 className="font-bold text-lg">Specialized Fellowship/Training</h3>
-                        <p className="text-[#1791cf] font-medium">Malaysia</p>
-                        <p className="text-sm text-slate-500">Year</p>
-                      </div>
-                       <div className="bg-slate-100 p-6 rounded-lg">
+                      <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
+  <h3 className="font-bold text-lg">
+    Clinical Fellowship / Advanced Training in Orthopaedics
+  </h3>
+  <p className="text-[#1791cf] font-medium">
+    Universiti Malaya Medical Centre (UMMC), Malaysia
+  </p>
+  <p className="text-sm text-slate-500">
+    2004
+  </p>
+</div>
+                       <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
                         <h3 className="font-bold text-lg">MBA in Hospital Management</h3>
                         <p className="text-[#1791cf] font-medium">Manipal University</p>
                         <p className="text-sm text-slate-500">2024-2026</p>
@@ -202,7 +345,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                   <section id="achievements" className="scroll-mt-32">
                     <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">Achievements & Success Stories</h2>
                     <div className="px-4 space-y-4">
-                      <div className="bg-slate-100 p-6 rounded-lg">
+                      <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
                         <h3 className="font-bold text-lg">Experienced Orthopedic Surgeon with Advanced Surgical Expertise</h3>
                         <p className="text-[#1791cf] font-medium">One of the first to successfully implement AI-guided robotic procedures in the area, leading to superior patient outcomes.</p>
                       </div>
@@ -223,7 +366,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                   <section id="community" className="scroll-mt-32">
                     <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">Current Affiliations</h2>
                     <div className="px-4 space-y-2">
-                      <details className="group bg-slate-100 p-4 rounded-lg" open>
+                      <details className="group bg-slate-100 dark:bg-slate-800 p-4 rounded-lg" open>
                         <summary className="font-semibold cursor-pointer flex justify-between items-center">
                           Malabar Hospitals, Manjeri
                         </summary>

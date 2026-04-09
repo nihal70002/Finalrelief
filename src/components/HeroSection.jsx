@@ -1,123 +1,88 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function HeroSection() {
-  const [showDoctor, setShowDoctor] = useState(false);
 
-  // The base64 URL for the background dots SVG
   const dotsBackgroundUrl =
     "bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9nPjwvc3ZnPg==')]";
 
   return (
     <section
       id="home"
-      className="bg-background-light font-sans overflow-hidden relative"
+      className="bg-white dark:bg-gray-900 font-sans overflow-hidden relative transition-colors"
     >
-      {/* Background Dots - Now applied to the full screen section */}
+
+      {/* Background dots */}
       <div className="absolute inset-0 opacity-7 pointer-events-none">
-        <div
-          className={`absolute inset-0 ${dotsBackgroundUrl} bg-repeat`}
-        />
+        <div className={`absolute inset-0 ${dotsBackgroundUrl} bg-repeat`} />
       </div>
 
-      <main className="flex-1 relative z-10">
-        {/* Adjusted padding for mobile screens */}
-        <section className="px-6 sm:px-10 lg:px-20 py-12 sm:py-20 lg:py-32">
-          <div className="relative max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
-            
-            {/* Hero Content */}
-            <div
-              className={`relative z-10 flex flex-col gap-6 text-center lg:text-left transition-transform duration-700 ease-in-out w-full lg:w-1/2
-                ${
-                  showDoctor
-                    ? "-translate-x-full opacity-0"
-                    : "translate-x-0 opacity-100"
-                }`}
-            >
-              <h1 className="text-4xl sm:text-5xl lg:text-[4.5rem] xl:text-[5rem] font-extrabold leading-[1.1] tracking-tight text-slate-900">
-                Regain Your <br className="hidden sm:block" />
+      <main className="relative z-10">
+
+        {/* HERO CONTAINER */}
+        <section className="px-6 sm:px-10 lg:px-20 pt-20 pb-12 sm:pt-24 sm:pb-16 lg:py-32">
+
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+
+            {/* LEFT CONTENT */}
+            <div className="flex flex-col gap-6 text-center lg:text-left w-full lg:w-1/2">
+
+              {/* HEADLINE */}
+              <h1 className="text-3xl sm:text-5xl lg:text-[4.5rem] xl:text-[5rem] font-extrabold leading-[1.2] tracking-tight text-slate-900 dark:text-white">
+                Regain Your
+                <br className="hidden sm:block" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-500">
-                  Active Life.
+                  Active Life
                 </span>
               </h1>
-              
-              <p className="text-slate-600 text-base sm:text-lg lg:text-xl font-normal leading-relaxed max-w-lg mx-auto lg:mx-0 mt-2">
-                Expert knee care starts here. With over 1,000 successful procedures, our dedicated team provides world-class treatments to get you moving again.
+
+              {/* TRUST LINE */}
+              <p className="text-sm sm:text-base text-teal-600 dark:text-teal-400 font-semibold">
+                Trusted by 1000+ patients across Kerala
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mt-6">
-                <button className="flex items-center justify-center rounded-full h-14 px-8 bg-teal-500 text-white text-lg font-medium hover:bg-teal-600 transition-colors font-sans border border-transparent">
-                  <span>Schedule Consultation</span>
+              {/* DESCRIPTION */}
+              <p className="text-slate-600 dark:text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed max-w-lg mx-auto lg:mx-0">
+                Expert knee replacement and orthopedic care with modern
+                surgical techniques designed to help you walk confidently
+                again — safely, comfortably, and faster.
+              </p>
+
+              {/* BUTTON */}
+              <div className="flex justify-center lg:justify-start">
+
+                <button className="rounded-full h-14 px-8 bg-teal-500 text-white text-lg font-medium hover:bg-teal-600 transition">
+                  Schedule Consultation
                 </button>
 
-                
               </div>
+
             </div>
 
-            {/* Doctor Image and Name */}
+            {/* RIGHT IMAGE */}
             <div className="w-full lg:w-1/2 flex flex-col items-center">
-              <div
-                // REVERTED: Back to the original W-3/4 and ASPECT-[4/3] for the original image size
-                className={`w-3/4 aspect-[4/3] bg-[center_top_30%] bg-no-repeat bg-cover rounded-2xl transition-transform duration-700 ease-in-out
-                  ${showDoctor ? "-translate-x-180" : "translate-x-0"}`}
-                style={{ backgroundImage: `url("/doccc.jpg")` }}
-              ></div>
 
-              <h3 className="mt-4 text-xl font-semibold text-gray-900">
+              <div
+                className="w-[85%] sm:w-[70%] lg:w-3/4 aspect-[4/3] bg-[center_top_25%] bg-no-repeat bg-cover rounded-2xl shadow-lg"
+                style={{ backgroundImage: `url("/doccc.jpg")` }}
+              />
+
+              {/* NAME */}
+              <h3 className="mt-4 text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">
                 Dr. Hydar Kunnumal
               </h3>
-              <p className="text-gray-600 text-sm">
-                MBBS, MS-Ortho, Mch(UK)
+
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                MBBS, MS-Ortho, MCh (UK)
               </p>
+
             </div>
 
-            {/* Doctor Detail Panel - Now with the background dots (Original Size/High Density) */}
-            <div
-              className={`absolute top-0 right-0 h-full w-full lg:w-1/2 bg-white p-8 flex flex-col gap-6 transition-transform duration-700 ease-in-out z-20
-                ${
-                  showDoctor
-                    ? "translate-x-0 opacity-100"
-                    : "translate-x-full opacity-0"
-                }`}
-            >
-              {/* Internal container to apply dots and ensure content is readable */}
-              <div className="absolute inset-0 opacity-7">
-                <div
-                  className={`absolute inset-0 ${dotsBackgroundUrl} bg-repeat`}
-                />
-              </div>
-
-              {/* Content of the detail panel, relative Z-index to overlay dots */}
-              <div className="relative z-10 flex flex-col gap-6 h-full">
-                <h1 className="text-gray-900 text-3xl font-bold">
-                  Dr. Hydar Kunnumal, Orthopedic Surgeon
-                </h1>
-
-                <ul className="text-gray-600 list-disc list-inside space-y-1">
-                  <li>
-                    Performed over 1,000 successful knee replacement surgeries.
-                  </li>
-                  <li>
-                    Expert in minimally invasive and robotic-assisted knee
-                    procedures.
-                  </li>
-                </ul>
-
-                <p className="text-gray-600">
-                  Passionately about helping patients regain an active lifestyle
-                  with personalized care plans and modern surgical techniques.
-                </p>
-
-                <button
-                  onClick={() => setShowDoctor(false)}
-                  className="mt-4 self-start px-6 py-3 bg-emerald-400 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors"
-                >
-                  Back to Overview
-                </button>
-              </div>
-            </div>
           </div>
+
         </section>
+
       </main>
+
     </section>
   );
 }
