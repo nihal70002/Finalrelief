@@ -172,7 +172,7 @@ border-b border-slate-200 dark:border-slate-700">
                       <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-tighter">
                         Meet Dr. Hyder Kunnumal: Consultant Orthopedic & Joint Replacement Surgeon
                       </h1>
-                      <p className="text-base md:text-lg font-normal leading-normal text-slate-600">
+                      <p className="text-base md:text-lg font-normal leading-normal text-slate-600 dark:text-slate-300">
                         Dedicated to restoring mobility and improving quality of life with compassionate, expert care, specializing in joint replacement surgery, trauma care, and sports injury management.
                       </p>
                     </div>
@@ -193,7 +193,7 @@ border-b border-slate-200 dark:border-slate-700">
                         
                         <div className="flex flex-col">
                           <h3 className="text-base font-semibold leading-normal">Dr. Hyder Kunnumal</h3>
-                          <p className="text-sm font-normal leading-normal text-slate-500">Consultant Orthopedic & Joint Replacement Surgeon</p>
+                          <p className="text-sm font-normal leading-normal text-slate-500 dark:text-slate-400">Consultant Orthopedic & Joint Replacement Surgeon</p>
                         </div>
                       </div>
                       <nav className="flex flex-col gap-1 mt-4">
@@ -284,7 +284,7 @@ border-b border-slate-200 dark:border-slate-700">
                   {/* Introduction */}
                   <section id="introduction" className="scroll-mt-32">
                     <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">Introduction</h2>
-                    <p className="text-slate-600 text-base font-normal leading-relaxed pb-3 pt-1 px-4">
+                    <p className="text-slate-600 dark:text-slate-300 text-base font-normal leading-relaxed pb-3 pt-1 px-4">
 With a strong commitment to Orthopedic care and patient well-being, my focus is on providing accurate diagnosis, effective treatment, and personalized surgical and non-surgical solutions for musculoskeletal conditions. Supported by comprehensive training and clinical experience, I aim to help patients regain mobility, reduce pain, and return to their daily activities with confidence through safe and evidence-based orthopedic care.
 </p>
                   </section>
@@ -296,7 +296,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                       <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
                         <h3 className="font-bold text-lg">MBBS (Bachelor of Medicine, Bachelor of Surgery)</h3>
                         <p className="text-[#1791cf] font-medium">Calicut Medical Collage, India</p>
-                        <p className="text-sm text-slate-500">1884 - 1991</p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">1884 - 1991</p>
                       </div>
                       <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
   <h3 className="font-bold text-lg">
@@ -305,14 +305,14 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
   <p className="text-[#1791cf] font-medium">
     JJM Medical College, Davangere, India
   </p>
-  <p className="text-sm text-slate-500">
+  <p className="text-sm text-slate-500 dark:text-slate-400">
     1994 – 1997
   </p>
 </div>
                       <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
                         <h3 className="font-bold text-lg">MCh (Orth.) (Master of Chirurgiae in Orthopedics)</h3>
                         <p className="text-[#1791cf] font-medium">University of Dundee, UK</p>
-                        <p className="text-sm text-slate-500">1994-1997</p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">1994-1997</p>
                       </div>
                       <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
   <h3 className="font-bold text-lg">
@@ -321,21 +321,21 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
   <p className="text-[#1791cf] font-medium">
     Universiti Malaya Medical Centre (UMMC), Malaysia
   </p>
-  <p className="text-sm text-slate-500">
+  <p className="text-sm text-slate-500 dark:text-slate-400">
     2004
   </p>
 </div>
                        <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
                         <h3 className="font-bold text-lg">MBA in Hospital Management</h3>
                         <p className="text-[#1791cf] font-medium">Manipal University</p>
-                        <p className="text-sm text-slate-500">2024-2026</p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">2024-2026</p>
                       </div>
                     </div>
                   </section>
 
                   <section id="mba" className="scroll-mt-32">
                     <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">MBA in Hospital Management (Q&A)</h2>
-                    <p className="text-slate-600 text-base font-normal leading-relaxed pb-3 pt-1 px-4">
+                    <p className="text-slate-600 dark:text-slate-300 text-base font-normal leading-relaxed pb-3 pt-1 px-4">
                       During the COVID-19 period, Dr. Hyder became more involved in hospital administration. That hands-on exposure to operations and leadership inspired him to strengthen his healthcare management knowledge through an MBA.
                     </p>
 
@@ -344,7 +344,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                         <summary className="font-semibold cursor-pointer flex justify-between items-center">
                           1. What motivated you to pursue an MBA?
                         </summary>
-                        <p className="mt-2 text-slate-600">
+                        <p className="mt-2 text-slate-600 dark:text-slate-300">
                           During the COVID-19 pandemic, I became actively involved in the administrative activities of Malabar Hospital. With reduced patient load and fewer surgeries at that time, I had the opportunity to observe hospital operations closely. This experience inspired me to understand healthcare management better and motivated me to pursue an MBA.
                         </p>
                       </details>
@@ -353,7 +353,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                         <summary className="font-semibold cursor-pointer flex justify-between items-center">
                           2. How did the COVID-19 period influence your career decisions?
                         </summary>
-                        <p className="mt-2 text-slate-600">
+                        <p className="mt-2 text-slate-600 dark:text-slate-300">
                           The pandemic created a situation where senior administrative support was limited, and I had to take on additional responsibilities. This exposure helped me understand the importance of structured hospital management and encouraged me to strengthen my administrative knowledge through formal education.
                         </p>
                       </details>
@@ -362,7 +362,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                         <summary className="font-semibold cursor-pointer flex justify-between items-center">
                           3. What role did hospital administration experience play in your MBA journey?
                         </summary>
-                        <p className="mt-2 text-slate-600">
+                        <p className="mt-2 text-slate-600 dark:text-slate-300">
                           My involvement in hospital administration during the pandemic gave me practical insight into operational challenges and system-level improvements. This experience became the foundation for my decision to pursue an MBA.
                         </p>
                       </details>
@@ -371,7 +371,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                         <summary className="font-semibold cursor-pointer flex justify-between items-center">
                           4. Did reduced clinical workload during COVID-19 help you focus on management learning?
                         </summary>
-                        <p className="mt-2 text-slate-600">
+                        <p className="mt-2 text-slate-600 dark:text-slate-300">
                           Yes. With fewer OP cases and surgeries during the pandemic, I had more time to observe hospital workflows and administrative processes. This helped me identify areas where management knowledge could improve hospital functioning.
                         </p>
                       </details>
@@ -380,7 +380,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                         <summary className="font-semibold cursor-pointer flex justify-between items-center">
                           5. What inspired you to think about improving hospital systems?
                         </summary>
-                        <p className="mt-2 text-slate-600">
+                        <p className="mt-2 text-slate-600 dark:text-slate-300">
                           While working closely with administrative tasks during the COVID period, I began thinking about how hospital systems could be strengthened from the foundational level. This curiosity led me to explore healthcare management through an MBA program.
                         </p>
                       </details>
@@ -389,7 +389,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                         <summary className="font-semibold cursor-pointer flex justify-between items-center">
                           6. How did your administrative responsibilities shape your professional goals?
                         </summary>
-                        <p className="mt-2 text-slate-600">
+                        <p className="mt-2 text-slate-600 dark:text-slate-300">
                           Taking responsibility during a challenging time helped me understand the importance of leadership and structured management in healthcare institutions. It encouraged me to expand my skills beyond clinical practice.
                         </p>
                       </details>
@@ -404,21 +404,21 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                       <div className="space-y-8">
                         <div className="relative pl-12">
                           <div className="absolute left-6 top-1 w-4 h-4 rounded-full bg-[#1791cf] -translate-x-1/2 transform"></div>
-                          <p className="text-sm text-slate-500">Latest Achievement</p>
+                          <p className="text-sm text-slate-500 dark:text-slate-400">Latest Achievement</p>
                           <h3 className="font-semibold text-lg">Extensive Experience in Orthopedic Surgery</h3>
-                          <p className="text-slate-600">Successfully performed providing advanced orthopedic surgical care with a focus on precision and patient recovery, setting a new benchmark for precision and minimal invasiveness in the region.</p>
+                          <p className="text-slate-600 dark:text-slate-300">Successfully performed providing advanced orthopedic surgical care with a focus on precision and patient recovery, setting a new benchmark for precision and minimal invasiveness in the region.</p>
                         </div>
                         <div className="relative pl-12">
                           <div className="absolute left-6 top-1 w-4 h-4 rounded-full bg-[#1791cf] -translate-x-1/2 transform"></div>
-                          <p className="text-sm text-slate-500">Current Role</p>
+                          <p className="text-sm text-slate-500 dark:text-slate-400">Current Role</p>
                           <h3 className="font-semibold text-lg">Consultant Orthopedic Surgeon</h3>
-                          <p className="text-slate-600">Relief Hospital, Kondotty (Recent Appointment)</p>
+                          <p className="text-slate-600 dark:text-slate-300">Relief Hospital, Kondotty (Recent Appointment)</p>
                         </div>
                         <div className="relative pl-12">
                           <div className="absolute left-6 top-1 w-4 h-4 rounded-full bg-[#1791cf] -translate-x-1/2 transform"></div>
-                          <p className="text-sm text-slate-500">Key Affiliation</p>
+                          <p className="text-sm text-slate-500 dark:text-slate-400">Key Affiliation</p>
                           <h3 className="font-semibold text-lg">Consultant Orthopedic Surgeon</h3>
-                          <p className="text-slate-600">Malabar Hospitals, Manjeri</p>
+                          <p className="text-slate-600 dark:text-slate-300">Malabar Hospitals, Manjeri</p>
                         </div>
                       </div>
                     </div>
@@ -434,7 +434,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                       </div>
                       <blockquote className="border-l-4 border-[#1791cf] pl-4 italic text-slate-600">
                         "Dr. Hyder’s skill is truly world-class. His AI robotic knee surgery was seamless, and my recovery was much faster than expected. I'm back on my feet and pain-free."
-                        <cite className="block not-italic text-sm font-medium text-slate-500 mt-2">- Anonymous Patient</cite>
+                        <cite className="block not-italic text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">- Anonymous Patient</cite>
                       </blockquote>
                     </div>
                   </section>
@@ -442,7 +442,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                   {/* Philosophy & Approach */}
                   <section id="philosophy" className="scroll-mt-32">
                     <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">My Philosophy & Approach</h2>
-                    <p className="text-slate-600 text-base font-normal leading-relaxed pb-3 pt-1 px-4">I believe in a patient-centric approach where you are a partner in your own healthcare journey. My philosophy is built on three pillars: **evidence-based surgical techniques**, **personalized care plans**, and **clear, honest communication**. The goal is always to leverage the highest level of surgical precision to ensure the least invasive procedure, prioritizing your long-term well-being and a swift, active return to life.</p>
+                    <p className="text-slate-600 dark:text-slate-300 text-base font-normal leading-relaxed pb-3 pt-1 px-4">I believe in a patient-centric approach where you are a partner in your own healthcare journey. My philosophy is built on three pillars: **evidence-based surgical techniques**, **personalized care plans**, and **clear, honest communication**. The goal is always to leverage the highest level of surgical precision to ensure the least invasive procedure, prioritizing your long-term well-being and a swift, active return to life.</p>
                   </section>
 
                   {/* Current Affiliations */}
@@ -453,13 +453,13 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                         <summary className="font-semibold cursor-pointer flex justify-between items-center">
                           Malabar Hospitals, Manjeri
                         </summary>
-                        <p className="mt-2 text-slate-600">Consultant Orthopedic Surgeon, specializing in complex joint replacements and sports injury management. A key location for my orthopedic consultation and surgical services.</p>
+                        <p className="mt-2 text-slate-600 dark:text-slate-300">Consultant Orthopedic Surgeon, specializing in complex joint replacements and sports injury management. A key location for my orthopedic consultation and surgical services.</p>
                       </details>
                       <details className="group bg-slate-100 p-4 rounded-lg" open>
                         <summary className="font-semibold cursor-pointer flex justify-between items-center">
                           Relief Hospital, Kondotty
                         </summary>
-                        <p className="mt-2 text-slate-600">Providing expert orthopedic consultation and surgical services, bringing advanced treatment options closer to the community.</p>
+                        <p className="mt-2 text-slate-600 dark:text-slate-300">Providing expert orthopedic consultation and surgical services, bringing advanced treatment options closer to the community.</p>
                       </details>
                     </div>
                   </section>
@@ -469,7 +469,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                     <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">A Personal Note</h2>
                     <div className="px-4">
                       <blockquote className="bg-[#1791cf]/10 border-l-4 border-[#1791cf] p-6 rounded-r-lg">
-                        <p className="text-lg italic text-slate-800">"The greatest reward of my work is seeing my patients reclaim their lives from pain and limitation. Using modern surgical techniques helps improve precision and supports faster recovery for many patients, translating to better, faster recoveries for you. My promise is to provide not just my surgical skill, but my unwavering support and dedication to your journey to complete mobility."</p>
+                        <p className="text-lg italic text-slate-800 dark:text-slate-100">"The greatest reward of my work is seeing my patients reclaim their lives from pain and limitation. Using modern surgical techniques helps improve precision and supports faster recovery for many patients, translating to better, faster recoveries for you. My promise is to provide not just my surgical skill, but my unwavering support and dedication to your journey to complete mobility."</p>
                         <cite className="block not-italic text-right mt-4 font-bold text-[#1791cf]">- Dr. Hyder Kunnumal</cite>
                       </blockquote>
                     </div>
@@ -478,7 +478,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                   {/* Contact */}
                   <section className="text-center py-10 scroll-mt-32" id="contact">
                     <h2 className="text-3xl font-bold mb-4">Ready to Take the Next Step?</h2>
-                    <p className="text-slate-600 max-w-2xl mx-auto mb-8">Let's work together to get you back to the life you love. Schedule a consultation today at Malabar Hospitals or Relief Hospital to discuss your options.</p>
+                    <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">Let's work together to get you back to the life you love. Schedule a consultation today at Malabar Hospitals or Relief Hospital to discuss your options.</p>
                     <button className="flex mx-auto min-w-[84px] max-w-sm cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-[#1791cf] text-slate-50 text-lg font-bold leading-normal tracking-wide hover:bg-[#1791cf]/90 transition-colors">
                       <span className="truncate">Schedule a Consultation</span>
                     </button>

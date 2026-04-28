@@ -50,7 +50,7 @@ export default function HeroSection() {
               {/* BUTTON */}
               <div className="flex justify-center lg:justify-start">
 
-                <button className="hidden md:inline-flex rounded-full h-14 px-8 bg-teal-500 text-white text-lg font-medium hover:bg-teal-600 transition">
+                <button className="hidden md:inline-flex items-center justify-center rounded-full h-14 px-8 bg-teal-500 text-white text-lg font-medium leading-none hover:bg-teal-600 transition">
   Schedule Consultation
 </button>
 
