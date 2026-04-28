@@ -105,14 +105,6 @@ export default function Navigation({ activeSection }) {
           {/* Mobile Controls */}
           <div className="flex items-center gap-2 md:hidden">
 
-            {/* Dark Mode Toggle Mobile */}
-            <button
-              onClick={toggleDarkMode}
-              className="text-white"
-            >
-              {dark ? <Sun size={22} /> : <Moon size={22} />}
-            </button>
-
             {/* Hamburger */}
             <button
               className="text-white"
@@ -130,6 +122,14 @@ export default function Navigation({ activeSection }) {
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden bg-gray-900 border-t border-white/10">
+
+          <button
+            onClick={toggleDarkMode}
+            className="flex w-full items-center justify-between px-6 py-4 text-white/80 hover:bg-emerald-500 hover:text-white"
+          >
+            <span className="text-left">{dark ? "Light Mode" : "Dark Mode"}</span>
+            {dark ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
 
           {links.map((link) => (
             <button
