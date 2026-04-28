@@ -37,7 +37,7 @@ export default function HeroSection() {
 
               {/* TRUST LINE */}
               <p className="text-sm sm:text-base text-teal-600 dark:text-teal-400 font-semibold">
-                Trusted by 1000+ patients across Kerala
+                (keeps you moving)
               </p>
 
               {/* DESCRIPTION */}
