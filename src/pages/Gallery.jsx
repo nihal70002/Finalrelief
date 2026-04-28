@@ -1,33 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 const galleryItems = [
-{ id: 1, type: "image", label: "Advanced laparoscopy", category: "Surgeries" },
-{ id: 2, type: "video", label: "Patient recovery journey", category: "Patient Stories", duration: "2:45" },
-{ id: 3, type: "image", label: "Operation theatre", category: "Facilities" },
-{ id: 4, type: "video", label: "ICU walkthrough", category: "Facilities", duration: "1:30" },
-{ id: 5, type: "image", label: "Pre-op preparation", category: "Surgeries" },
-{ id: 6, type: "image", label: "Post-op success story", category: "Patient Stories" },
-{ id: 7, type: "image", label: "Recovery ward", category: "Facilities" },
-{ id: 8, type: "video", label: "Doctor consultation", category: "Patient Stories", duration: "3:12" },
+  { id: 1, type: "video", label: "Patient Recovery Video 1", category: "Videos", src: "/videos/vid1.mp4", description: "Recovery progress and walking improvement after treatment." },
+  { id: 2, type: "video", label: "Patient Recovery Video 2", category: "Videos", src: "/videos/vid2.mp4", description: "Follow-up check showing better mobility and confidence." },
+  { id: 3, type: "video", label: "Patient Recovery Video 3", category: "Videos", src: "/videos/vid3.mp4", description: "A short clip highlighting strength and stability improvements." },
+  { id: 4, type: "video", label: "Patient Recovery Video 4", category: "Videos", src: "/videos/vid4.mp4", description: "Rehab milestone progress after the procedure and physiotherapy." },
+  { id: 5, type: "video", label: "Patient Recovery Video 5", category: "Videos", src: "/videos/vid5.mp4", description: "Continued recovery journey with improved range of motion." },
 ];
 
-const tabs = ["All", "Surgeries", "Facilities", "Patient Stories", "Videos"];
+const tabs = [];
 
 export default function Gallery() {
 
 const navigate = useNavigate();
-const [activeTab, setActiveTab] = useState("All");
-
-const filteredItems = galleryItems.filter((item) => {
-if (activeTab === "All") return true;
-if (activeTab === "Videos") return item.type === "video";
-return item.category === activeTab;
-});
+const filteredItems = galleryItems;
 
 return ( <div className="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white min-h-screen">
 
-```
   {/* NAVBAR */}
   <header className="fixed top-0 left-0 right-0 z-50
   bg-white dark:bg-slate-900
@@ -70,31 +60,55 @@ return ( <div className="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-
   <section className="pt-24 pb-16 px-6 md:px-12 lg:px-20">
 
     {/* HEADER */}
-    <div className="text-center mb-12">
-      <h2 className="text-3xl md:text-4xl font-bold">
-        Our Gallery
-      </h2>
+    <div className="mx-auto max-w-5xl mb-10">
+      <div className="text-center">
+        <span className="inline-flex items-center gap-2 rounded-full border border-emerald-200 dark:border-emerald-900/40 bg-white/70 dark:bg-slate-800/60 px-4 py-1.5 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
+          Patient Recovery Gallery
+        </span>
 
-      <div className="mx-auto mt-3 mb-4 w-12 h-1 rounded-full bg-emerald-500" />
+        <h2 className="mt-4 text-3xl md:text-4xl font-bold tracking-tight">
+          Real recovery journeys treated by Dr. Hydar
+        </h2>
 
-      <p className="text-slate-600 dark:text-slate-400 mt-4 max-w-2xl mx-auto">
-        Explore facilities, procedures, and patient recovery journeys.
-      </p>
+        <div className="mx-auto mt-3 mb-4 w-12 h-1 rounded-full bg-emerald-500" />
+
+        <p className="text-slate-600 dark:text-slate-400 mt-4 max-w-2xl mx-auto leading-relaxed">
+          Watch short patient videos showing improvements in walking, range of motion, and confidence during recovery.
+          These clips are shared for awareness and education.
+        </p>
+      </div>
+
+      <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5">
+          <p className="text-sm font-semibold">Focus</p>
+          <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">Mobility, pain relief, stability, and faster return to daily life.</p>
+        </div>
+
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5">
+          <p className="text-sm font-semibold">What you’ll see</p>
+          <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">Before/after progress, rehab milestones, and walking improvement.</p>
+        </div>
+
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-5">
+          <p className="text-sm font-semibold">Privacy note</p>
+          <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">Videos are shown without personal details and are for information only.</p>
+        </div>
+      </div>
     </div>
 
 
     {/* FILTER TABS */}
-    <div className="flex flex-wrap justify-center gap-4 mb-10">
+    <div className="hidden flex-wrap justify-center gap-4 mb-10">
 
       {tabs.map((tab) => (
 
         <button
           key={tab}
-          onClick={() => setActiveTab(tab)}
+          onClick={() => null}
 
           className={`px-5 py-2 rounded-full text-sm font-medium transition
 
-          ${activeTab === tab
+          ${false
 
             ? "bg-emerald-600 text-white"
 
@@ -118,56 +132,28 @@ return ( <div className="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-
         <div
           key={item.id}
 
-          className="bg-white dark:bg-slate-800
-          rounded-xl border border-slate-200 dark:border-slate-700
+          className="group bg-white dark:bg-slate-800
+          rounded-2xl border border-slate-200 dark:border-slate-700
           overflow-hidden shadow-sm hover:shadow-md
-          transition cursor-pointer"
+          transition"
         >
 
           {/* THUMBNAIL */}
 
-          {item.type === "image"
+          <div className="relative">
+            <video
+              className="h-44 w-full object-cover bg-slate-200 dark:bg-slate-700"
+              src={item.src}
+              controls
+              preload="metadata"
+            />
 
-            ? (
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-slate-950/40 to-transparent" />
 
-              <div className="h-44 bg-emerald-50 dark:bg-slate-700 flex items-center justify-center relative">
-
-                <span className="absolute top-2 right-2 bg-emerald-100 text-emerald-700
-                text-xs font-medium px-2 py-0.5 rounded-full">
-
-                  Image
-
-                </span>
-
-              </div>
-
-            )
-
-            : (
-
-              <div className="h-44 bg-slate-200 dark:bg-slate-700 flex items-center justify-center relative">
-
-                <div className="w-11 h-11 rounded-full bg-emerald-600
-                flex items-center justify-center text-white">
-
-                  ▶
-
-                </div>
-
-                {item.duration && (
-
-                  <span className="absolute top-2 right-2 bg-emerald-600
-                  text-white text-xs px-2 py-0.5 rounded-full">
-
-                    {item.duration}
-
-                  </span>
-
-                )}
-
-              </div>
-
-            )}
+            <span className="pointer-events-none absolute left-3 top-3 rounded-full bg-emerald-600/90 px-2.5 py-1 text-[11px] font-semibold text-white">
+              Recovery
+            </span>
+          </div>
 
 
           {/* BODY */}
@@ -178,9 +164,11 @@ return ( <div className="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-
               {item.label}
             </p>
 
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-              {item.category}
-            </p>
+            {item.description && (
+              <p className="mt-1 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                {item.description}
+              </p>
+            )}
 
           </div>
 

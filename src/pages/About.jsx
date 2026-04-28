@@ -127,6 +127,17 @@ border-b border-slate-200 dark:border-slate-700">
             </a>
 
             <a
+              href="#mba"
+              onClick={(e) => {
+                handleAnchorClick(e, "mba");
+                setMobileMenuOpen(false);
+              }}
+              className="block text-sm font-medium"
+            >
+              MBA (Q&A)
+            </a>
+
+            <a
               href="#contact"
               onClick={(e) => {
                 handleAnchorClick(e, "contact");
@@ -204,6 +215,15 @@ border-b border-slate-200 dark:border-slate-700">
     onClick={(e) => handleAnchorClick(e, "education")}
   >
     <p className="text-sm font-medium">Education</p>
+  </a>
+
+  <a
+    className="flex items-center gap-3 px-3 py-2 rounded-lg
+               hover:bg-slate-200 dark:hover:bg-slate-700"
+    href="#mba"
+    onClick={(e) => handleAnchorClick(e, "mba")}
+  >
+    <p className="text-sm font-medium">MBA (Q&A)</p>
   </a>
 
   <a
@@ -310,6 +330,69 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                         <p className="text-[#1791cf] font-medium">Manipal University</p>
                         <p className="text-sm text-slate-500">2024-2026</p>
                       </div>
+                    </div>
+                  </section>
+
+                  <section id="mba" className="scroll-mt-32">
+                    <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">MBA in Hospital Management (Q&A)</h2>
+                    <p className="text-slate-600 text-base font-normal leading-relaxed pb-3 pt-1 px-4">
+                      During the COVID-19 period, Dr. Hyder became more involved in hospital administration. That hands-on exposure to operations and leadership inspired him to strengthen his healthcare management knowledge through an MBA.
+                    </p>
+
+                    <div className="px-4 space-y-3">
+                      <details className="group bg-slate-100 dark:bg-slate-800 p-4 rounded-lg" open>
+                        <summary className="font-semibold cursor-pointer flex justify-between items-center">
+                          1. What motivated you to pursue an MBA?
+                        </summary>
+                        <p className="mt-2 text-slate-600">
+                          During the COVID-19 pandemic, I became actively involved in the administrative activities of Malabar Hospital. With reduced patient load and fewer surgeries at that time, I had the opportunity to observe hospital operations closely. This experience inspired me to understand healthcare management better and motivated me to pursue an MBA.
+                        </p>
+                      </details>
+
+                      <details className="group bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">
+                        <summary className="font-semibold cursor-pointer flex justify-between items-center">
+                          2. How did the COVID-19 period influence your career decisions?
+                        </summary>
+                        <p className="mt-2 text-slate-600">
+                          The pandemic created a situation where senior administrative support was limited, and I had to take on additional responsibilities. This exposure helped me understand the importance of structured hospital management and encouraged me to strengthen my administrative knowledge through formal education.
+                        </p>
+                      </details>
+
+                      <details className="group bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">
+                        <summary className="font-semibold cursor-pointer flex justify-between items-center">
+                          3. What role did hospital administration experience play in your MBA journey?
+                        </summary>
+                        <p className="mt-2 text-slate-600">
+                          My involvement in hospital administration during the pandemic gave me practical insight into operational challenges and system-level improvements. This experience became the foundation for my decision to pursue an MBA.
+                        </p>
+                      </details>
+
+                      <details className="group bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">
+                        <summary className="font-semibold cursor-pointer flex justify-between items-center">
+                          4. Did reduced clinical workload during COVID-19 help you focus on management learning?
+                        </summary>
+                        <p className="mt-2 text-slate-600">
+                          Yes. With fewer OP cases and surgeries during the pandemic, I had more time to observe hospital workflows and administrative processes. This helped me identify areas where management knowledge could improve hospital functioning.
+                        </p>
+                      </details>
+
+                      <details className="group bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">
+                        <summary className="font-semibold cursor-pointer flex justify-between items-center">
+                          5. What inspired you to think about improving hospital systems?
+                        </summary>
+                        <p className="mt-2 text-slate-600">
+                          While working closely with administrative tasks during the COVID period, I began thinking about how hospital systems could be strengthened from the foundational level. This curiosity led me to explore healthcare management through an MBA program.
+                        </p>
+                      </details>
+
+                      <details className="group bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">
+                        <summary className="font-semibold cursor-pointer flex justify-between items-center">
+                          6. How did your administrative responsibilities shape your professional goals?
+                        </summary>
+                        <p className="mt-2 text-slate-600">
+                          Taking responsibility during a challenging time helped me understand the importance of leadership and structured management in healthcare institutions. It encouraged me to expand my skills beyond clinical practice.
+                        </p>
+                      </details>
                     </div>
                   </section>
 
