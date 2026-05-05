@@ -84,8 +84,7 @@ border-b border-slate-200 dark:border-slate-700">
           </a>
 
           <a
-            href="#contact"
-            onClick={(e) => handleAnchorClick(e, "contact")}
+            href="/contact"
             className="text-sm font-medium hover:text-[#1791cf]"
           >
             Contact
@@ -144,11 +143,8 @@ border-b border-slate-200 dark:border-slate-700">
             </a>
 
             <a
-              href="#contact"
-              onClick={(e) => {
-                handleAnchorClick(e, "contact");
-                setMobileMenuOpen(false);
-              }}
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
               className="block text-sm font-medium"
             >
               Contact
@@ -176,10 +172,10 @@ border-b border-slate-200 dark:border-slate-700">
                   <div className="lg:col-span-3 flex flex-col gap-6 text-left">
                     <div className="flex flex-col gap-4">
                       <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-tighter">
-                        Meet Dr. Hyder Kunnumal: Consultant Orthopedic & Joint Replacement Surgeon
+                        Meet Dr Hyder Kunnummal: Orthopedic Doctor in Manjeri
                       </h1>
                       <p className="text-base md:text-lg font-normal leading-normal text-slate-600 dark:text-slate-300">
-                        Dedicated to restoring mobility and improving quality of life with compassionate, expert care, specializing in joint replacement surgery, trauma care, and sports injury management.
+                        Dr Hyder Kunnummal is an orthopedic doctor in Manjeri, Kerala, focused on knee replacement, arthritis treatment, trauma care, and sports injury management for patients from Manjeri, Malappuram, and nearby areas.
                       </p>
                     </div>
                     <button className="flex min-w-[84px] max-w-sm cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-[#1791cf] text-slate-50 text-base font-bold leading-normal tracking-wide hover:bg-[#1791cf]/90 transition-colors">
@@ -198,7 +194,7 @@ border-b border-slate-200 dark:border-slate-700">
                         {/* Smaller Image placeholder for Dr. Hyder Kunnumal */}
                         
                         <div className="flex flex-col">
-                          <h3 className="text-base font-semibold leading-normal">Dr. Hyder Kunnumal</h3>
+                          <h3 className="text-base font-semibold leading-normal">Dr Hyder Kunnummal</h3>
                           <p className="text-sm font-normal leading-normal text-slate-500 dark:text-slate-400">Consultant Orthopedic & Joint Replacement Surgeon</p>
                         </div>
                       </div>

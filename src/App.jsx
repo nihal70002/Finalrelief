@@ -3,14 +3,6 @@ import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 import Navigation from "./components/Navigation";
 import ScrollToTop from "./components/ScrolltoTop";
-import SEO from "./components/SEO";
-
-import HeroSection from "./components/HeroSection";
-import TreatmentSection from "./components/TreatmentSection";
-
-import TestimonialsSection from "./components/TestimonialsSection";
-import StatisticsSection from "./components/StatisticsSection";
-import ContactSection from "./components/ContactSection";
 
 import TotalKneeReplacement from "./pages/TotalKneeReplacement";
 import PartialKneeReplacement from "./pages/PartialKneeReplacement";
@@ -20,6 +12,7 @@ import Arthroscopic from "./pages/Arthroscopic";
 import Conservative from "./pages/Conservative";
 import Meniscus from "./pages/Meniscus";
 import Revision from "./pages/Revision";
+import Home from "./pages/Home";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Treatment from "./pages/Treatment";
@@ -38,24 +31,7 @@ export default function App() {
 
       <Routes>
         {/* HOME */}
-        <Route
-          path="/"
-          element={
-            <main>
-              <SEO
-                title="Orthopedic Doctor in Manjeri | Knee Replacement Kerala | Dr Hyder Kunnummal"
-                description="Consult Dr Hyder Kunnummal, orthopedic doctor in Manjeri, Kerala for knee replacement, joint pain, arthritis care, fracture treatment, and advanced orthopedic surgery."
-                path="/"
-              />
-              <HeroSection />
-             
-              <TreatmentSection />
-              <TestimonialsSection />
-              <StatisticsSection />
-              <ContactSection />
-            </main>
-          }
-        />
+        <Route path="/" element={<Home />} />
 
         {/* ABOUT */}
         <Route path="/about" element={<About />} />

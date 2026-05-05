@@ -4,7 +4,7 @@ const siteUrl = "https://drhyderkunnummal.in";
 
 const defaultSchema = {
   "@context": "https://schema.org",
-  "@type": "Physician",
+  "@type": ["Physician", "MedicalBusiness"],
   name: "Dr Hyder Kunnummal",
   url: siteUrl,
   image: `${siteUrl}/doccc.jpg`,

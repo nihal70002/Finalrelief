@@ -27,13 +27,13 @@ export default function HeroSection() {
             <div className="flex flex-col gap-6 text-center lg:text-left w-full lg:w-1/2">
 
               {/* HEADLINE */}
-              <h1 className="text-3xl sm:text-5xl lg:text-[4.5rem] xl:text-[5rem] font-extrabold leading-[1.2] tracking-tight text-slate-900 dark:text-white">
-                Orthopedic Doctor in Manjeri
+              <h2 className="text-3xl sm:text-5xl lg:text-[4.5rem] xl:text-[5rem] font-extrabold leading-[1.2] tracking-tight text-slate-900 dark:text-white">
+                Expert Orthopedic Care
                 <br className="hidden sm:block" />
                 <span className="text-transparent bg-clip-text bg-[length:200%_auto] bg-gradient-to-r from-teal-600 via-emerald-300 to-teal-600 animate-shimmer">
   Knee Replacement Kerala
 </span>
-              </h1>
+              </h2>
 
               {/* TRUST LINE */}
               <p className="text-sm sm:text-base text-teal-600 dark:text-teal-400 font-semibold">
