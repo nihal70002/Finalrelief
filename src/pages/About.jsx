@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import SEO from "../components/SEO";
 
 export default function About() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,6 +20,11 @@ export default function About() {
   return (
     // Light theme enforced
     <div className="bg-slate-50 dark:bg-slate-900 font-sans text-[#0e171b] dark:text-white min-h-screen">
+      <SEO
+        title="About Dr Hyder Kunnummal | Orthopedic Doctor in Manjeri, Kerala"
+        description="Learn about Dr Hyder Kunnummal, orthopedic doctor in Manjeri, Kerala, his experience in knee replacement, orthopedic surgery, patient recovery care, and hospital management."
+        path="/about"
+      />
       <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
         <div className="layout-container flex h-full grow flex-col">
           <header className="fixed top-0 left-0 right-0 z-50

@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Menu, X, Moon, Sun } from "lucide-react";
 
 export default function Navigation({ activeSection }) {
-  const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [dark, setDark] = useState(false);
 
   const links = [
     { id: "about", label: "Meet Dr. Hydar", path: "/about" },
-    { id: "treatment", label: "Treatment", path: null },
-    { id: "contact", label: "Contact Us", path: null },
+    { id: "treatment", label: "Treatment", path: "/treatment" },
+    { id: "contact", label: "Contact Us", path: "/contact" },
     { id: "Gallery", label: "Gallery", path: "/Gallery" },
   ];
 
@@ -37,31 +36,6 @@ export default function Navigation({ activeSection }) {
     setDark(!dark);
   };
 
-  const scrollToSection = (sectionId) => {
-    const el = document.getElementById(sectionId);
-    if (!el) return;
-
-    const navbarHeight = 64;
-
-    const y =
-      el.getBoundingClientRect().top +
-      window.pageYOffset -
-      navbarHeight;
-
-    window.scrollTo({ top: y, behavior: "smooth" });
-
-    setOpen(false);
-  };
-
-  const handleClick = (link) => {
-    if (link.path) {
-      navigate(link.path);
-      setOpen(false);
-    } else {
-      scrollToSection(link.id);
-    }
-  };
-
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm shadow-lg">
       <div className="container mx-auto px-4">
@@ -77,9 +51,9 @@ export default function Navigation({ activeSection }) {
           <div className="hidden md:flex items-center gap-2">
 
             {links.map((link) => (
-              <button
+              <Link
                 key={link.label}
-                onClick={() => handleClick(link)}
+                to={link.path}
                 className={`px-3 py-1 rounded-md text-sm transition-all duration-300
                   ${
                     activeSection === link.id
@@ -88,7 +62,7 @@ export default function Navigation({ activeSection }) {
                   }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
 
             {/* Dark Mode Toggle */}
@@ -132,13 +106,14 @@ export default function Navigation({ activeSection }) {
           </button>
 
           {links.map((link) => (
-            <button
+            <Link
               key={link.label}
-              onClick={() => handleClick(link)}
+              to={link.path}
+              onClick={() => setOpen(false)}
               className="block w-full text-left px-6 py-4 text-white/80 hover:bg-emerald-500 hover:text-white"
             >
               {link.label}
-            </button>
+            </Link>
           ))}
 
         </div>

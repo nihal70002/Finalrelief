@@ -135,11 +135,13 @@ export default function TreatmentSection() {
               }`}
             >
               {treatment.image && (
-                <div
-                  className="w-full h-32 bg-center bg-cover rounded-md mb-3"
-                  style={{
-                    backgroundImage: `url(${treatment.image})`,
-                  }}
+                <img
+                  src={treatment.image}
+                  alt={`${treatment.title} by Dr Hyder Kunnummal`}
+                  loading="lazy"
+                  width="320"
+                  height="128"
+                  className="w-full h-32 object-cover object-center rounded-md mb-3"
                 />
               )}
 

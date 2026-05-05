@@ -3,6 +3,7 @@ import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 
 import Navigation from "./components/Navigation";
 import ScrollToTop from "./components/ScrolltoTop";
+import SEO from "./components/SEO";
 
 import HeroSection from "./components/HeroSection";
 import TreatmentSection from "./components/TreatmentSection";
@@ -21,6 +22,8 @@ import Meniscus from "./pages/Meniscus";
 import Revision from "./pages/Revision";
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
+import Treatment from "./pages/Treatment";
+import Contact from "./pages/Contact";
 
 export default function App() {
   const location = useLocation();
@@ -38,20 +41,27 @@ export default function App() {
         <Route
           path="/"
           element={
-            <>
+            <main>
+              <SEO
+                title="Orthopedic Doctor in Manjeri | Knee Replacement Kerala | Dr Hyder Kunnummal"
+                description="Consult Dr Hyder Kunnummal, orthopedic doctor in Manjeri, Kerala for knee replacement, joint pain, arthritis care, fracture treatment, and advanced orthopedic surgery."
+                path="/"
+              />
               <HeroSection />
              
               <TreatmentSection />
               <TestimonialsSection />
               <StatisticsSection />
               <ContactSection />
-            </>
+            </main>
           }
         />
 
         {/* ABOUT */}
         <Route path="/about" element={<About />} />
 
+        <Route path="/treatment" element={<Treatment />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/Gallery" element={<Gallery />} />
 
         {/* TREATMENTS */}
