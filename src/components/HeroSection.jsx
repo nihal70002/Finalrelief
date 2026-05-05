@@ -28,10 +28,10 @@ export default function HeroSection() {
 
               {/* HEADLINE */}
               <h2 className="text-3xl sm:text-5xl lg:text-[4.5rem] xl:text-[5rem] font-extrabold leading-[1.2] tracking-tight text-slate-900 dark:text-white">
-                Expert Orthopedic Care
+                Regain Your
                 <br className="hidden sm:block" />
                 <span className="text-transparent bg-clip-text bg-[length:200%_auto] bg-gradient-to-r from-teal-600 via-emerald-300 to-teal-600 animate-shimmer">
-  Knee Replacement Kerala
+  Active Life
 </span>
               </h2>
 
@@ -42,9 +42,9 @@ export default function HeroSection() {
 
               {/* DESCRIPTION */}
               <p className="text-slate-600 dark:text-gray-300 text-base sm:text-lg lg:text-xl leading-relaxed max-w-lg mx-auto lg:mx-0">
-                Dr. Hyder Kunnummal provides expert knee replacement and
-                orthopedic care in Kerala with modern surgical techniques
-                designed to help you walk confidently again.
+                Expert knee replacement and orthopedic care with modern
+                surgical techniques designed to help you walk confidently
+                again — safely, comfortably, and faster.
               </p>
 
               {/* BUTTON */}
