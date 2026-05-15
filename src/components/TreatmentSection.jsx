@@ -103,11 +103,10 @@ export default function TreatmentSection() {
 
         {/* HEADER */}
         <div
-          className={`text-center mb-10 transition-all duration-1000 ${
-            isVisible
+          className={`text-center mb-10 transition-all duration-1000 ${isVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-10"
-          }`}
+            }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-3 text-gray-900 dark:text-white">
             Treatment Options
@@ -128,16 +127,15 @@ export default function TreatmentSection() {
               key={treatment.id}
               onClick={() => handleTreatmentClick(treatment.id)}
               style={{ transitionDelay: `${index * 80}ms` }}
-              className={`group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 cursor-pointer transition-all duration-500 hover:shadow-xl hover:border-emerald-500 hover:-translate-y-1 ${
-                isVisible
+              className={`group bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 cursor-pointer transition-all duration-500 hover:shadow-xl hover:border-emerald-500 hover:-translate-y-1 ${isVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
-              }`}
+                }`}
             >
               {treatment.image && (
                 <img
                   src={treatment.image}
-                  alt={`${treatment.title} by Dr Hyder Kunnummal`}
+                  alt={`${treatment.title} by Dr Hydar Kunnummal`}
                   loading="lazy"
                   width="320"
                   height="128"

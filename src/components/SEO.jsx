@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 
-const siteUrl = "https://drhyderkunnummal.in";
+const siteUrl = "https://drHydarkunnummal.in";
 
 const defaultSchema = {
   "@context": "https://schema.org",
   "@type": ["Physician", "MedicalBusiness"],
-  name: "Dr Hyder Kunnummal",
+  name: "Dr Hydar Kunnummal",
   url: siteUrl,
   image: `${siteUrl}/doccc.jpg`,
   medicalSpecialty: "Orthopedic Surgery",
@@ -100,7 +100,7 @@ export default function SEO({
 
     upsertMeta('meta[property="og:site_name"]', {
       property: "og:site_name",
-      content: "Dr Hyder Kunnummal",
+      content: "Dr Hydar Kunnummal",
     });
 
     upsertMeta('meta[property="og:image"]', {

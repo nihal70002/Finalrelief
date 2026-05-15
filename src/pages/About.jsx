@@ -21,8 +21,8 @@ export default function About() {
     // Light theme enforced
     <div className="bg-slate-50 dark:bg-slate-900 font-sans text-[#0e171b] dark:text-white min-h-screen">
       <SEO
-        title="About Dr Hyder Kunnummal | Orthopedic Doctor in Manjeri, Kerala"
-        description="Learn about Dr Hyder Kunnummal, orthopedic doctor in Manjeri, Kerala, his experience in knee replacement, orthopedic surgery, patient recovery care, and hospital management."
+        title="About Dr Hydar Kunnummal | Orthopedic Doctor in Manjeri, Kerala"
+        description="Learn about Dr Hydar Kunnummal, orthopedic doctor in Manjeri, Kerala, his experience in knee replacement, orthopedic surgery, patient recovery care, and hospital management."
         path="/about"
       />
       <div className="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
@@ -30,134 +30,134 @@ export default function About() {
           <header className="fixed top-0 left-0 right-0 z-50
 bg-white dark:bg-slate-900
 border-b border-slate-200 dark:border-slate-700">
-  <div className="px-4 md:px-10 lg:px-20 xl:px-40 flex justify-center">
-    <div className="w-full max-w-[1280px]">
+            <div className="px-4 md:px-10 lg:px-20 xl:px-40 flex justify-center">
+              <div className="w-full max-w-[1280px]">
 
-      {/* Navbar row */}
-      <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 py-3">
+                {/* Navbar row */}
+                <div className="flex items-center justify-between px-4 sm:px-6 md:px-10 py-3">
 
-        {/* Logo */}
-       <div className="flex items-center gap-2 text-[#1791cf] -ml-2">
+                  {/* Logo */}
+                  <div className="flex items-center gap-2 text-[#1791cf] -ml-2">
 
-  {/* Back button */}
-  <button
-    onClick={() => navigate("/")}
-    className="flex items-center justify-center w-9 h-9 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-6 h-6"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      strokeWidth={2.5}
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M15 18l-6-6 6-6" />
-    </svg>
-  </button>
+                    {/* Back button */}
+                    <button
+                      onClick={() => navigate("/")}
+                      className="flex items-center justify-center w-9 h-9 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-6 h-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2.5}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 18l-6-6 6-6" />
+                      </svg>
+                    </button>
 
-  {/* Title */}
-  <h2 className="text-lg font-bold leading-none text-[#1791cf]">
-    Dr. Hyder Kunnumal
-  </h2>
+                    {/* Title */}
+                    <h2 className="text-lg font-bold leading-none text-[#1791cf]">
+                      Dr. Hydar Kunnumal
+                    </h2>
 
-</div>
+                  </div>
 
-        {/* Desktop menu */}
-        <div className="hidden md:flex items-center gap-8">
+                  {/* Desktop menu */}
+                  <div className="hidden md:flex items-center gap-8">
 
-          <a
-            href="#introduction"
-            onClick={(e) => handleAnchorClick(e, "introduction")}
-            className="text-sm font-medium hover:text-[#1791cf]"
-          >
-            About
-          </a>
+                    <a
+                      href="#introduction"
+                      onClick={(e) => handleAnchorClick(e, "introduction")}
+                      className="text-sm font-medium hover:text-[#1791cf]"
+                    >
+                      About
+                    </a>
 
-         
 
-          <a
-            href="/Gallery"
-            className="text-sm font-medium hover:text-[#1791cf]"
-          >
-            Testimonials
-          </a>
 
-          <a
-            href="/contact"
-            className="text-sm font-medium hover:text-[#1791cf]"
-          >
-            Contact
-          </a>
+                    <a
+                      href="/Gallery"
+                      className="text-sm font-medium hover:text-[#1791cf]"
+                    >
+                      Testimonials
+                    </a>
 
-        </div>
+                    <a
+                      href="/contact"
+                      className="text-sm font-medium hover:text-[#1791cf]"
+                    >
+                      Contact
+                    </a>
 
-        {/* Mobile hamburger */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700"
-          >
-            ☰
-          </button>
-        </div>
+                  </div>
 
-      </div>
+                  {/* Mobile hamburger */}
+                  <div className="md:hidden">
+                    <button
+                      onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                      className="p-2 rounded-md hover:bg-slate-200 dark:hover:bg-slate-700"
+                    >
+                      ☰
+                    </button>
+                  </div>
 
-      {/* Mobile overlay menu */}
-      {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-md">
+                </div>
 
-          <div className="px-6 py-5 space-y-4">
+                {/* Mobile overlay menu */}
+                {mobileMenuOpen && (
+                  <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 shadow-md">
 
-            <a
-              href="#introduction"
-              onClick={(e) => {
-                handleAnchorClick(e, "introduction");
-                setMobileMenuOpen(false);
-              }}
-              className="block text-sm font-medium"
-            >
-              About
-            </a>
+                    <div className="px-6 py-5 space-y-4">
 
-            
+                      <a
+                        href="#introduction"
+                        onClick={(e) => {
+                          handleAnchorClick(e, "introduction");
+                          setMobileMenuOpen(false);
+                        }}
+                        className="block text-sm font-medium"
+                      >
+                        About
+                      </a>
 
-            <a
-              href="/Gallery"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium"
-            >
-              Testimonials
-            </a>
 
-            <a
-              href="#mba"
-              onClick={(e) => {
-                handleAnchorClick(e, "mba");
-                setMobileMenuOpen(false);
-              }}
-              className="block text-sm font-medium"
-            >
-              MBA (Q&A)
-            </a>
 
-            <a
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium"
-            >
-              Contact
-            </a>
+                      <a
+                        href="/Gallery"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block text-sm font-medium"
+                      >
+                        Testimonials
+                      </a>
 
-          </div>
+                      <a
+                        href="#mba"
+                        onClick={(e) => {
+                          handleAnchorClick(e, "mba");
+                          setMobileMenuOpen(false);
+                        }}
+                        className="block text-sm font-medium"
+                      >
+                        MBA (Q&A)
+                      </a>
 
-        </div>
-      )}
+                      <a
+                        href="/contact"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block text-sm font-medium"
+                      >
+                        Contact
+                      </a>
 
-    </div>
-  </div>
-</header>
+                    </div>
+
+                  </div>
+                )}
+
+              </div>
+            </div>
+          </header>
 
           {/* Main Content */}
           <main className="flex-1 px-4 md:px-10 lg:px-20 xl:px-40 py-5">
@@ -166,16 +166,16 @@ border-b border-slate-200 dark:border-slate-700">
               <section className="py-10 md:py-16" id="hero">
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 md:gap-12 items-center">
                   <div className="lg:col-span-2">
-                    {/* Image placeholder for Dr. Hyder Kunnumal */}
-                    <div className="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl shadow-lg" style={{backgroundImage: 'url("hy1.jpg")'}}></div>
+                    {/* Image placeholder for Dr. Hydar Kunnumal */}
+                    <div className="w-full aspect-square bg-center bg-no-repeat bg-cover rounded-xl shadow-lg" style={{ backgroundImage: 'url("hy1.jpg")' }}></div>
                   </div>
                   <div className="lg:col-span-3 flex flex-col gap-6 text-left">
                     <div className="flex flex-col gap-4">
                       <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-tighter">
-                        Meet Dr Hyder Kunnummal: Orthopedic Doctor in Manjeri
+                        Meet Dr Hydar Kunnummal: Orthopedic Doctor in Manjeri
                       </h1>
                       <p className="text-base md:text-lg font-normal leading-normal text-slate-600 dark:text-slate-300">
-                        Dr Hyder Kunnummal is an orthopedic doctor in Manjeri, Kerala, focused on knee replacement, arthritis treatment, trauma care, and sports injury management for patients from Manjeri, Malappuram, and nearby areas.
+                        Dr Hydar Kunnummal is an orthopedic doctor in Manjeri, Kerala, focused on knee replacement, arthritis treatment, trauma care, and sports injury management for patients from Manjeri, Malappuram, and nearby areas.
                       </p>
                     </div>
                     <button className="flex min-w-[84px] max-w-sm cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-[#1791cf] text-slate-50 text-base font-bold leading-normal tracking-wide hover:bg-[#1791cf]/90 transition-colors">
@@ -191,89 +191,89 @@ border-b border-slate-200 dark:border-slate-700">
                   <div className="flex h-full min-h-[500px] flex-col justify-between bg-slate-100 dark:bg-slate-800 p-4 rounded-lg border border-slate-200">
                     <div className="flex flex-col gap-4">
                       <div className="flex items-center gap-3">
-                        {/* Smaller Image placeholder for Dr. Hyder Kunnumal */}
-                        
+                        {/* Smaller Image placeholder for Dr. Hydar Kunnumal */}
+
                         <div className="flex flex-col">
-                          <h3 className="text-base font-semibold leading-normal">Dr Hyder Kunnummal</h3>
+                          <h3 className="text-base font-semibold leading-normal">Dr Hydar Kunnummal</h3>
                           <p className="text-sm font-normal leading-normal text-slate-500 dark:text-slate-400">Consultant Orthopedic & Joint Replacement Surgeon</p>
                         </div>
                       </div>
                       <nav className="flex flex-col gap-1 mt-4">
 
-  <a
-    className="flex items-center gap-3 px-3 py-2 rounded-lg
+                        <a
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg
                bg-[#1791cf]/20 text-[#1791cf]
                dark:bg-[#1791cf]/30 dark:text-[#4fc3f7]"
-    href="#introduction"
-    onClick={(e) => handleAnchorClick(e, "introduction")}
-  >
-    <p className="text-sm font-medium">Introduction</p>
-  </a>
+                          href="#introduction"
+                          onClick={(e) => handleAnchorClick(e, "introduction")}
+                        >
+                          <p className="text-sm font-medium">Introduction</p>
+                        </a>
 
-  <a
-    className="flex items-center gap-3 px-3 py-2 rounded-lg
+                        <a
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg
                hover:bg-slate-200 dark:hover:bg-slate-700"
-    href="#education"
-    onClick={(e) => handleAnchorClick(e, "education")}
-  >
-    <p className="text-sm font-medium">Education</p>
-  </a>
+                          href="#education"
+                          onClick={(e) => handleAnchorClick(e, "education")}
+                        >
+                          <p className="text-sm font-medium">Education</p>
+                        </a>
 
-  <a
-    className="flex items-center gap-3 px-3 py-2 rounded-lg
+                        <a
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg
                hover:bg-slate-200 dark:hover:bg-slate-700"
-    href="#mba"
-    onClick={(e) => handleAnchorClick(e, "mba")}
-  >
-    <p className="text-sm font-medium">MBA (Q&A)</p>
-  </a>
+                          href="#mba"
+                          onClick={(e) => handleAnchorClick(e, "mba")}
+                        >
+                          <p className="text-sm font-medium">MBA (Q&A)</p>
+                        </a>
 
-  <a
-    className="flex items-center gap-3 px-3 py-2 rounded-lg
+                        <a
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg
                hover:bg-slate-200 dark:hover:bg-slate-700"
-    href="#journey"
-    onClick={(e) => handleAnchorClick(e, "journey")}
-  >
-    <p className="text-sm font-medium">Professional Journey</p>
-  </a>
+                          href="#journey"
+                          onClick={(e) => handleAnchorClick(e, "journey")}
+                        >
+                          <p className="text-sm font-medium">Professional Journey</p>
+                        </a>
 
-  <a
-    className="flex items-center gap-3 px-3 py-2 rounded-lg
+                        <a
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg
                hover:bg-slate-200 dark:hover:bg-slate-700"
-    href="#achievements"
-    onClick={(e) => handleAnchorClick(e, "achievements")}
-  >
-    <p className="text-sm font-medium">Achievements</p>
-  </a>
+                          href="#achievements"
+                          onClick={(e) => handleAnchorClick(e, "achievements")}
+                        >
+                          <p className="text-sm font-medium">Achievements</p>
+                        </a>
 
-  <a
-    className="flex items-center gap-3 px-3 py-2 rounded-lg
+                        <a
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg
                hover:bg-slate-200 dark:hover:bg-slate-700"
-    href="#philosophy"
-    onClick={(e) => handleAnchorClick(e, "philosophy")}
-  >
-    <p className="text-sm font-medium">Philosophy</p>
-  </a>
+                          href="#philosophy"
+                          onClick={(e) => handleAnchorClick(e, "philosophy")}
+                        >
+                          <p className="text-sm font-medium">Philosophy</p>
+                        </a>
 
-  <a
-    className="flex items-center gap-3 px-3 py-2 rounded-lg
+                        <a
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg
                hover:bg-slate-200 dark:hover:bg-slate-700"
-    href="#community"
-    onClick={(e) => handleAnchorClick(e, "community")}
-  >
-    <p className="text-sm font-medium">Affiliations</p>
-  </a>
+                          href="#community"
+                          onClick={(e) => handleAnchorClick(e, "community")}
+                        >
+                          <p className="text-sm font-medium">Affiliations</p>
+                        </a>
 
-  <a
-    className="flex items-center gap-3 px-3 py-2 rounded-lg
+                        <a
+                          className="flex items-center gap-3 px-3 py-2 rounded-lg
                hover:bg-slate-200 dark:hover:bg-slate-700"
-    href="#personal-note"
-    onClick={(e) => handleAnchorClick(e, "personal-note")}
-  >
-    <p className="text-sm font-medium">A Personal Note</p>
-  </a>
+                          href="#personal-note"
+                          onClick={(e) => handleAnchorClick(e, "personal-note")}
+                        >
+                          <p className="text-sm font-medium">A Personal Note</p>
+                        </a>
 
-</nav>
+                      </nav>
                     </div>
                     <button className="w-full flex mt-6 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#1791cf] text-slate-50 text-sm font-bold leading-normal tracking-wide hover:bg-[#1791cf]/90 transition-colors">
                       <span className="truncate">Schedule a Consultation</span>
@@ -287,10 +287,10 @@ border-b border-slate-200 dark:border-slate-700">
                   <section id="introduction" className="scroll-mt-32">
                     <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">Introduction</h2>
                     <p className="text-slate-600 dark:text-slate-300 text-base font-normal leading-relaxed pb-3 pt-1 px-4">
-With a strong commitment to Orthopedic care and patient well-being, my focus is on providing accurate diagnosis, effective treatment, and personalized surgical and non-surgical solutions for musculoskeletal conditions. Supported by comprehensive training and clinical experience, I aim to help patients regain mobility, reduce pain, and return to their daily activities with confidence through safe and evidence-based orthopedic care.
-</p>
+                      With a strong commitment to Orthopedic care and patient well-being, my focus is on providing accurate diagnosis, effective treatment, and personalized surgical and non-surgical solutions for musculoskeletal conditions. Supported by comprehensive training and clinical experience, I aim to help patients regain mobility, reduce pain, and return to their daily activities with confidence through safe and evidence-based orthopedic care.
+                    </p>
                   </section>
-                  
+
                   {/* Education & Qualifications */}
                   <section id="education" className="scroll-mt-32">
                     <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">Education & Qualifications</h2>
@@ -301,33 +301,33 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                         <p className="text-sm text-slate-500 dark:text-slate-400">1884 - 1991</p>
                       </div>
                       <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
-  <h3 className="font-bold text-lg">
-    MS Orthopaedics (Master of Surgery in Orthopaedics)
-  </h3>
-  <p className="text-[#1791cf] font-medium">
-    JJM Medical College, Davangere, India
-  </p>
-  <p className="text-sm text-slate-500 dark:text-slate-400">
-    1994 – 1997
-  </p>
-</div>
+                        <h3 className="font-bold text-lg">
+                          MS Orthopaedics (Master of Surgery in Orthopaedics)
+                        </h3>
+                        <p className="text-[#1791cf] font-medium">
+                          JJM Medical College, Davangere, India
+                        </p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">
+                          1994 – 1997
+                        </p>
+                      </div>
                       <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
                         <h3 className="font-bold text-lg">MCh (Orth.) (Master of Chirurgiae in Orthopedics)</h3>
                         <p className="text-[#1791cf] font-medium">University of Dundee, UK</p>
                         <p className="text-sm text-slate-500 dark:text-slate-400">1994-1997</p>
                       </div>
                       <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
-  <h3 className="font-bold text-lg">
-    Clinical Fellowship / Advanced Training in Orthopaedics
-  </h3>
-  <p className="text-[#1791cf] font-medium">
-    Universiti Malaya Medical Centre (UMMC), Malaysia
-  </p>
-  <p className="text-sm text-slate-500 dark:text-slate-400">
-    2004
-  </p>
-</div>
-                       <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
+                        <h3 className="font-bold text-lg">
+                          Clinical Fellowship / Advanced Training in Orthopaedics
+                        </h3>
+                        <p className="text-[#1791cf] font-medium">
+                          Universiti Malaya Medical Centre (UMMC), Malaysia
+                        </p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">
+                          2004
+                        </p>
+                      </div>
+                      <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded-lg">
                         <h3 className="font-bold text-lg">MBA in Hospital Management</h3>
                         <p className="text-[#1791cf] font-medium">Manipal University</p>
                         <p className="text-sm text-slate-500 dark:text-slate-400">2024-2026</p>
@@ -338,7 +338,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                   <section id="mba" className="scroll-mt-32">
                     <h2 className="text-2xl font-bold leading-tight tracking-tight px-4 pb-3 pt-5">MBA in Hospital Management (Q&A)</h2>
                     <p className="text-slate-600 dark:text-slate-100 text-base font-normal leading-relaxed pb-3 pt-1 px-4">
-                      During the COVID-19 period, Dr. Hyder became more involved in hospital administration. That hands-on exposure to operations and leadership inspired him to strengthen his healthcare management knowledge through an MBA.
+                      During the COVID-19 period, Dr. Hydar became more involved in hospital administration. That hands-on exposure to operations and leadership inspired him to strengthen his healthcare management knowledge through an MBA.
                     </p>
 
                     <div className="px-4 space-y-3">
@@ -435,7 +435,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                         <p className="text-[#1791cf] font-medium">One of the first to successfully implement AI-guided robotic procedures in the area, leading to superior patient outcomes.</p>
                       </div>
                       <blockquote className="border-l-4 border-[#1791cf] pl-4 italic text-slate-600">
-                        "Dr. Hyder’s skill is truly world-class. His AI robotic knee surgery was seamless, and my recovery was much faster than expected. I'm back on my feet and pain-free."
+                        "Dr. Hydar’s skill is truly world-class. His AI robotic knee surgery was seamless, and my recovery was much faster than expected. I'm back on my feet and pain-free."
                         <cite className="block not-italic text-sm font-medium text-slate-500 dark:text-slate-400 mt-2">- Anonymous Patient</cite>
                       </blockquote>
                     </div>
@@ -472,7 +472,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                     <div className="px-4">
                       <blockquote className="bg-[#1791cf]/10 border-l-4 border-[#1791cf] p-6 rounded-r-lg">
                         <p className="text-lg italic text-slate-800 dark:text-slate-100">"The greatest reward of my work is seeing my patients reclaim their lives from pain and limitation. Using modern surgical techniques helps improve precision and supports faster recovery for many patients, translating to better, faster recoveries for you. My promise is to provide not just my surgical skill, but my unwavering support and dedication to your journey to complete mobility."</p>
-                        <cite className="block not-italic text-right mt-4 font-bold text-[#1791cf]">- Dr. Hyder Kunnumal</cite>
+                        <cite className="block not-italic text-right mt-4 font-bold text-[#1791cf]">- Dr. Hydar Kunnumal</cite>
                       </blockquote>
                     </div>
                   </section>
@@ -490,10 +490,10 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
                   <section className="py-6 scroll-mt-32" id="trust-badges">
                     <div className="flex justify-center items-center gap-8 md:gap-12 flex-wrap">
                       {/* Trust Badges */}
-                      <img className="h-12 grayscale opacity-60 hover:opacity-100 transition-opacity" alt="Malabar Hospital Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApQkYm1WuU2oh-azxBzBj-Sugf-_FfLoqXdVB6hDhRPZ9Si8V1cqWLeGd76UKtZB2-oTwN8lvFyYyjMD1Q3-bVGJurrlQVV-aQAZFGUOTK1a4gaeZysTL48iYBp9ELqIla9uG-a9aVBlgRq6A6kLwUgT9qlaO28TcGVaYiCINxgB4JARw-flSZrRr4Am4iGzJ5_7UKtcyKOLcW27psjuXqf3wTJDqky4p3SDjKzJEnru2EEswG0-8XjeS_Fy1SolJ4GCB-vHkM0VTt"/>
-                      <img className="h-12 grayscale opacity-60 hover:opacity-100 transition-opacity" alt="Relief Hospital Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4cawf9zEnM18meMppgmf7MyX8soYBPma1dXvDoy8J7i59gZ5o0K9vgNdKYz3e7oAl01a4YsYH-WDIlCu49bEK-0_xcq7F6LBCiihVBudMk2kjDIi3BSUXOqAN-1SFSVy6SiXn1Vt3QUp9Jm6AqwqOufF_6ImSwq_gU4ot127p5sv--zY23A65oYofZc-q0OD9xfOvuB5sRmJ0Mk14ZM0doaBZWu9jU4CtwvFVVo-E4pH9lRJ4b3PRFOJRD7nWuBAIbJmILNS1MxuZ"/>
-                      <img className="h-12 grayscale opacity-60 hover:opacity-100 transition-opacity" alt="Robotics Surgery Award" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFinidrlATOeWVdObXLxNoGq2J_8o9-KsxUfSKb4eq2fs8P4rfyEyysT067AvGC4F-RkUYNX94hqm-7UcwJ7laNmCqf59i6Dnpr2kv8b4rFk0m4agl9q_uScyAGBgTMfgnckJMLijdjc-17gnmp2x16ui7HoEpSC7-nrAzhfxGrcR_06RXklcp0ULgPAWMI5A5IgwzApK25qLWV_bFpySeRJLUtLHPJAaaAmAitQFXmski96cgKG2bO1TzLfERdIM1T43XKniOvi9F"/>
-                      <img className="h-12 grayscale opacity-60 hover:opacity-100 transition-opacity" alt="International MCh UK Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDexxBqNte0YuV7n3tVEbqMNOPCfAJh5aNhHO1oEpTPZ_tEE0vL_rdfF0gUedqR-S_TsoFHrv5BhJDmJSBvY1QcS7T1rnzN4twpEQgGjSZqsQnpEeF6TGk-1rJB_qhE9RIrxbSqlrmBC3GR4xVUvCb1L-XYzMQlcEjGfl4ucYzLNjahpBDyzEEzjwPPbi2cR40_co0vjufLiUck4SZxE2ASN98ny0y55NGMMdW3kmAJiYyrw2dbUYQIjhp0rOeHhWdvblNg01b6Pwjh"/>
+                      <img className="h-12 grayscale opacity-60 hover:opacity-100 transition-opacity" alt="Malabar Hospital Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApQkYm1WuU2oh-azxBzBj-Sugf-_FfLoqXdVB6hDhRPZ9Si8V1cqWLeGd76UKtZB2-oTwN8lvFyYyjMD1Q3-bVGJurrlQVV-aQAZFGUOTK1a4gaeZysTL48iYBp9ELqIla9uG-a9aVBlgRq6A6kLwUgT9qlaO28TcGVaYiCINxgB4JARw-flSZrRr4Am4iGzJ5_7UKtcyKOLcW27psjuXqf3wTJDqky4p3SDjKzJEnru2EEswG0-8XjeS_Fy1SolJ4GCB-vHkM0VTt" />
+                      <img className="h-12 grayscale opacity-60 hover:opacity-100 transition-opacity" alt="Relief Hospital Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4cawf9zEnM18meMppgmf7MyX8soYBPma1dXvDoy8J7i59gZ5o0K9vgNdKYz3e7oAl01a4YsYH-WDIlCu49bEK-0_xcq7F6LBCiihVBudMk2kjDIi3BSUXOqAN-1SFSVy6SiXn1Vt3QUp9Jm6AqwqOufF_6ImSwq_gU4ot127p5sv--zY23A65oYofZc-q0OD9xfOvuB5sRmJ0Mk14ZM0doaBZWu9jU4CtwvFVVo-E4pH9lRJ4b3PRFOJRD7nWuBAIbJmILNS1MxuZ" />
+                      <img className="h-12 grayscale opacity-60 hover:opacity-100 transition-opacity" alt="Robotics Surgery Award" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFinidrlATOeWVdObXLxNoGq2J_8o9-KsxUfSKb4eq2fs8P4rfyEyysT067AvGC4F-RkUYNX94hqm-7UcwJ7laNmCqf59i6Dnpr2kv8b4rFk0m4agl9q_uScyAGBgTMfgnckJMLijdjc-17gnmp2x16ui7HoEpSC7-nrAzhfxGrcR_06RXklcp0ULgPAWMI5A5IgwzApK25qLWV_bFpySeRJLUtLHPJAaaAmAitQFXmski96cgKG2bO1TzLfERdIM1T43XKniOvi9F" />
+                      <img className="h-12 grayscale opacity-60 hover:opacity-100 transition-opacity" alt="International MCh UK Logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDexxBqNte0YuV7n3tVEbqMNOPCfAJh5aNhHO1oEpTPZ_tEE0vL_rdfF0gUedqR-S_TsoFHrv5BhJDmJSBvY1QcS7T1rnzN4twpEQgGjSZqsQnpEeF6TGk-1rJB_qhE9RIrxbSqlrmBC3GR4xVUvCb1L-XYzMQlcEjGfl4ucYzLNjahpBDyzEEzjwPPbi2cR40_co0vjufLiUck4SZxE2ASN98ny0y55NGMMdW3kmAJiYyrw2dbUYQIjhp0rOeHhWdvblNg01b6Pwjh" />
                     </div>
                   </section>
                 </div>
@@ -504,7 +504,7 @@ With a strong commitment to Orthopedic care and patient well-being, my focus is 
           {/* Footer */}
           <footer className="bg-slate-200 border-t border-slate-300 mt-16">
             <div className="max-w-[1280px] mx-auto px-4 md:px-10 lg:px-20 xl:px-40 py-8 text-center text-slate-600 text-sm">
-              <p>© 2024 Dr. Hyder Kunnumal. All Rights Reserved.</p>
+              <p>© 2024 Dr. Hydar Kunnumal. All Rights Reserved.</p>
               <p className="mt-2">This website is for informational purpses only and does not constitute medical advice. Consultations are available at Malabar Hospital and Relief Hospital.</p>
             </div>
           </footer>

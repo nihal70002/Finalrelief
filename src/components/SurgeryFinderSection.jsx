@@ -10,7 +10,7 @@ export default function SurgeryFinderSection() {
   const [selectedCause, setSelectedCause] = useState("");
   const [selectedAge, setSelectedAge] = useState("");
   const [recommendedSurgeries, setRecommendedSurgeries] = useState([]);
-const hasInteractedRef = useRef(false);
+  const hasInteractedRef = useRef(false);
 
 
   useEffect(() => {
@@ -24,39 +24,39 @@ const hasInteractedRef = useRef(false);
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
-/* ✅ Scroll CARD to middle ONLY after user interaction */
-useEffect(() => {
-  if (!hasInteractedRef.current) return; // 🔥 THIS LINE FIXES EVERYTHING
+  /* ✅ Scroll CARD to middle ONLY after user interaction */
+  useEffect(() => {
+    if (!hasInteractedRef.current) return; // 🔥 THIS LINE FIXES EVERYTHING
 
-  if (cardRef.current) {
-    const rect = cardRef.current.getBoundingClientRect();
+    if (cardRef.current) {
+      const rect = cardRef.current.getBoundingClientRect();
 
-    const scrollTop =
-      rect.top +
-      window.pageYOffset -
-      window.innerHeight / 2 +
-      rect.height / 2;
+      const scrollTop =
+        rect.top +
+        window.pageYOffset -
+        window.innerHeight / 2 +
+        rect.height / 2;
 
-    window.scrollTo({
-      top: scrollTop,
-      behavior: "smooth",
-    });
-  }
-}, [step]);
+      window.scrollTo({
+        top: scrollTop,
+        behavior: "smooth",
+      });
+    }
+  }, [step]);
 
 
 
 
 
   const symptoms = [
-    { id: "knee-pain", label: "Chronic Knee Pain",  desc: "Persistent pain in knee", img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" },
-    { id: "swelling", label: "Swelling & Inflammation",  desc: "Visible swelling or warmth", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=300&fit=crop" },
-    { id: "instability", label: "Knee Instability",  desc: "Feeling of knee giving way", img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=300&fit=crop" },
+    { id: "knee-pain", label: "Chronic Knee Pain", desc: "Persistent pain in knee", img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop" },
+    { id: "swelling", label: "Swelling & Inflammation", desc: "Visible swelling or warmth", img: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=400&h=300&fit=crop" },
+    { id: "instability", label: "Knee Instability", desc: "Feeling of knee giving way", img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400&h=300&fit=crop" },
     { id: "locking", label: "Knee Locking", desc: "Knee gets stuck or catches", img: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400&h=300&fit=crop" },
-    { id: "stiffness", label: "Stiffness",  desc: "Limited range of motion", img: "https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&h=300&fit=crop" },
-    { id: "popping", label: "Popping Sounds",  desc: "Clicking or popping noises", img: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=300&fit=crop" },
-    { id: "walking-difficulty", label: "Difficulty Walking",  desc: "Trouble bearing weight", img: "https://images.unsplash.com/photo-1483721310020-03333e577078?w=400&h=300&fit=crop" },
-    { id: "sharp-pain", label: "Sharp Pain",  desc: "Sudden pain during movement", img: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=400&h=300&fit=crop" }
+    { id: "stiffness", label: "Stiffness", desc: "Limited range of motion", img: "https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&h=300&fit=crop" },
+    { id: "popping", label: "Popping Sounds", desc: "Clicking or popping noises", img: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=300&fit=crop" },
+    { id: "walking-difficulty", label: "Difficulty Walking", desc: "Trouble bearing weight", img: "https://images.unsplash.com/photo-1483721310020-03333e577078?w=400&h=300&fit=crop" },
+    { id: "sharp-pain", label: "Sharp Pain", desc: "Sudden pain during movement", img: "https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=400&h=300&fit=crop" }
   ];
 
   const causes = [
@@ -75,57 +75,57 @@ useEffect(() => {
     { id: "elderly", label: "65+", icon: "👵", desc: "Elderly" }
   ];
 
-const surgeryDatabase = {
-  acl: {
-    name: "ACL Reconstruction Surgery",
-    description: "Surgical reconstruction of the torn anterior cruciate ligament using a graft to restore knee stability.",
-    recoveryTime: "6-12 weeks",
-    bestFor: ["Sports injuries", "Knee instability", "Active lifestyle"],
-    urgency: "scheduled",
-    successRate: "95%",
-    img: "https://picsum.photos/800/500?random=11"
-  },
+  const surgeryDatabase = {
+    acl: {
+      name: "ACL Reconstruction Surgery",
+      description: "Surgical reconstruction of the torn anterior cruciate ligament using a graft to restore knee stability.",
+      recoveryTime: "6-12 weeks",
+      bestFor: ["Sports injuries", "Knee instability", "Active lifestyle"],
+      urgency: "scheduled",
+      successRate: "95%",
+      img: "https://picsum.photos/800/500?random=11"
+    },
 
-  meniscus: {
-    name: "Meniscus Repair/Removal",
-    description: "Surgical treatment for torn meniscus cartilage to relieve pain and restore function.",
-    recoveryTime: "6-12 weeks",
-    bestFor: ["Locking knee", "Catching sensation", "Sports injury"],
-    urgency: "scheduled",
-    successRate: "90%",
-    img: "https://picsum.photos/800/500?random=12"
-  },
+    meniscus: {
+      name: "Meniscus Repair/Removal",
+      description: "Surgical treatment for torn meniscus cartilage to relieve pain and restore function.",
+      recoveryTime: "6-12 weeks",
+      bestFor: ["Locking knee", "Catching sensation", "Sports injury"],
+      urgency: "scheduled",
+      successRate: "90%",
+      img: "https://picsum.photos/800/500?random=12"
+    },
 
-  tkr: {
-    name: "Total Knee Replacement",
-    description: "Complete replacement of damaged knee joint with prosthetic components for pain relief and improved mobility.",
-    recoveryTime: "6-12 weeks",
-    bestFor: ["Chronic severe pain", "Age 50+", "Arthritis"],
-    urgency: "consultation",
-    successRate: "93%",
-    img: "https://picsum.photos/800/500?random=13"
-  },
+    tkr: {
+      name: "Total Knee Replacement",
+      description: "Complete replacement of damaged knee joint with prosthetic components for pain relief and improved mobility.",
+      recoveryTime: "6-12 weeks",
+      bestFor: ["Chronic severe pain", "Age 50+", "Arthritis"],
+      urgency: "consultation",
+      successRate: "93%",
+      img: "https://picsum.photos/800/500?random=13"
+    },
 
-  highTibialOsteotomy: {
-    name: "High Tibial Osteotomy (HTO)",
-    description: "Realigns the knee joint to relieve pressure from the damaged compartment.",
-    recoveryTime: "12-24 weeks",
-    bestFor: ["Younger patients with early osteoarthritis"],
-    urgency: "scheduled",
-    successRate: "88%",
-    img: "https://picsum.photos/800/500?random=14"
-  },
+    highTibialOsteotomy: {
+      name: "High Tibial Osteotomy (HTO)",
+      description: "Realigns the knee joint to relieve pressure from the damaged compartment.",
+      recoveryTime: "12-24 weeks",
+      bestFor: ["Younger patients with early osteoarthritis"],
+      urgency: "scheduled",
+      successRate: "88%",
+      img: "https://picsum.photos/800/500?random=14"
+    },
 
-  unicompartmentalKneeArthroplasty: {
-    name: "Unicompartmental Knee Arthroplasty (UKA)",
-    description: "Partial knee replacement for arthritis limited to one compartment.",
-    recoveryTime: "6-12 weeks",
-    bestFor: ["Localized knee arthritis"],
-    urgency: "scheduled",
-    successRate: "90%",
-    img: "https://picsum.photos/800/500?random=15"
-  }
-};
+    unicompartmentalKneeArthroplasty: {
+      name: "Unicompartmental Knee Arthroplasty (UKA)",
+      description: "Partial knee replacement for arthritis limited to one compartment.",
+      recoveryTime: "6-12 weeks",
+      bestFor: ["Localized knee arthritis"],
+      urgency: "scheduled",
+      successRate: "90%",
+      img: "https://picsum.photos/800/500?random=15"
+    }
+  };
 
   const toggleSymptom = (id) => {
     setSelectedSymptoms((prev) =>
@@ -134,48 +134,48 @@ const surgeryDatabase = {
   };
 
   const findMatchingSurgeries = () => {
-  const matches = [];
-  const symptomSet = new Set(selectedSymptoms);
+    const matches = [];
+    const symptomSet = new Set(selectedSymptoms);
 
-  // ACL Reconstruction
-  if (
-    (selectedCause === "sports" || selectedCause === "sudden") &&
-    (symptomSet.has("instability") || symptomSet.has("popping"))
-  ) {
-    matches.push(surgeryDatabase.acl);
-  }
+    // ACL Reconstruction
+    if (
+      (selectedCause === "sports" || selectedCause === "sudden") &&
+      (symptomSet.has("instability") || symptomSet.has("popping"))
+    ) {
+      matches.push(surgeryDatabase.acl);
+    }
 
-  // Meniscus Repair
-  if (symptomSet.has("locking") || symptomSet.has("stiffness")) {
-    matches.push(surgeryDatabase.meniscus);
-  }
+    // Meniscus Repair
+    if (symptomSet.has("locking") || symptomSet.has("stiffness")) {
+      matches.push(surgeryDatabase.meniscus);
+    }
 
-  // Total Knee Replacement
-  if (
-    symptomSet.has("knee-pain") &&
-    (selectedAge === "senior" || selectedAge === "elderly")
-  ) {
-    matches.push(surgeryDatabase.tkr);
-  }
+    // Total Knee Replacement
+    if (
+      symptomSet.has("knee-pain") &&
+      (selectedAge === "senior" || selectedAge === "elderly")
+    ) {
+      matches.push(surgeryDatabase.tkr);
+    }
 
-  // High Tibial Osteotomy
-  if (symptomSet.has("knee-pain") && selectedAge === "middle") {
-    matches.push(surgeryDatabase.highTibialOsteotomy);
-  }
+    // High Tibial Osteotomy
+    if (symptomSet.has("knee-pain") && selectedAge === "middle") {
+      matches.push(surgeryDatabase.highTibialOsteotomy);
+    }
 
-  // Unicompartmental Knee Arthroplasty
-  if (symptomSet.has("knee-pain") && selectedAge === "middle") {
-    matches.push(surgeryDatabase.unicompartmentalKneeArthroplasty);
-  }
+    // Unicompartmental Knee Arthroplasty
+    if (symptomSet.has("knee-pain") && selectedAge === "middle") {
+      matches.push(surgeryDatabase.unicompartmentalKneeArthroplasty);
+    }
 
-  // Fallback
-  if (!matches.length) {
-    matches.push(surgeryDatabase.acl);
-  }
+    // Fallback
+    if (!matches.length) {
+      matches.push(surgeryDatabase.acl);
+    }
 
-  setRecommendedSurgeries(matches);
-  setStep(4);
-};
+    setRecommendedSurgeries(matches);
+    setStep(4);
+  };
 
 
   const resetFinder = () => {
@@ -206,9 +206,8 @@ const surgeryDatabase = {
       </div>
 
       <div
-        className={`container mx-auto px-4 relative z-10 transition-all duration-1000 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
+        className={`container mx-auto px-4 relative z-10 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
       >
         {/* Header */}
         <div className="text-center mb-6 md:mb-10">
@@ -229,19 +228,17 @@ const surgeryDatabase = {
             {[1, 2, 3, 4].map((s) => (
               <div key={s} className="flex items-center flex-1">
                 <div
-                  className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
-                    step >= s
+                  className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${step >= s
                       ? "bg-emerald-600 text-white shadow scale-105"
                       : "bg-gray-200 text-gray-500"
-                  }`}
+                    }`}
                 >
                   {s}
                 </div>
                 {s < 4 && (
                   <div
-                    className={`flex-1 h-1 mx-1 md:mx-2 rounded-full transition-all duration-300 ${
-                      step > s ? "bg-emerald-600" : "bg-gray-200"
-                    }`}
+                    className={`flex-1 h-1 mx-1 md:mx-2 rounded-full transition-all duration-300 ${step > s ? "bg-emerald-600" : "bg-gray-200"
+                      }`}
                   />
                 )}
               </div>
@@ -254,9 +251,9 @@ const surgeryDatabase = {
 
         {/* Main Content Card */}
         <div
-  ref={cardRef}
-  className="max-w-4xl mx-auto bg-white rounded-xl md:rounded-2xl shadow-lg p-3  lg:p-8"
->
+          ref={cardRef}
+          className="max-w-4xl mx-auto bg-white rounded-xl md:rounded-2xl shadow-lg p-3  lg:p-8"
+        >
 
           {/* Step 1: Symptoms */}
           {step === 1 && (
@@ -267,23 +264,21 @@ const surgeryDatabase = {
                   <button
                     key={s.id}
                     onClick={() => toggleSymptom(s.id)}
-                    className={`group relative overflow-hidden rounded-lg md:rounded-xl transition-all duration-300 text-left hover:shadow-md ${
-                      selectedSymptoms.includes(s.id)
+                    className={`group relative overflow-hidden rounded-lg md:rounded-xl transition-all duration-300 text-left hover:shadow-md ${selectedSymptoms.includes(s.id)
                         ? "ring-2 ring-emerald-600 shadow scale-102"
                         : "hover:scale-101"
-                    }`}
+                      }`}
                   >
                     <div className="relative h-28 overflow-hidden">
-                      <img 
-                        src={s.img} 
+                      <img
+                        src={s.img}
                         alt={s.label}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
-                      <div className={`absolute inset-0 transition-all duration-300 ${
-                        selectedSymptoms.includes(s.id)
+                      <div className={`absolute inset-0 transition-all duration-300 ${selectedSymptoms.includes(s.id)
                           ? "bg-gradient-to-t from-emerald-900/90 via-emerald-800/70 to-emerald-600/50"
                           : "bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent group-hover:from-emerald-900/70"
-                      }`}></div>
+                        }`}></div>
                       <div className="absolute top-2 left-2 text-xl">{s.icon}</div>
                     </div>
                     <div className="p-3 bg-white">
@@ -321,23 +316,21 @@ const surgeryDatabase = {
                   <button
                     key={c.id}
                     onClick={() => setSelectedCause(c.id)}
-                    className={`group relative overflow-hidden rounded-lg md:rounded-xl transition-all duration-300 text-left hover:shadow-md ${
-                      selectedCause === c.id
+                    className={`group relative overflow-hidden rounded-lg md:rounded-xl transition-all duration-300 text-left hover:shadow-md ${selectedCause === c.id
                         ? "ring-2 ring-emerald-600 shadow scale-102"
                         : "hover:scale-101"
-                    }`}
+                      }`}
                   >
                     <div className="relative h-24 md:h-28 overflow-hidden">
-                      <img 
-                        src={c.img} 
+                      <img
+                        src={c.img}
                         alt={c.label}
                         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                       />
-                      <div className={`absolute inset-0 transition-all duration-300 ${
-                        selectedCause === c.id
+                      <div className={`absolute inset-0 transition-all duration-300 ${selectedCause === c.id
                           ? "bg-gradient-to-t from-emerald-900/90 via-emerald-800/70 to-emerald-600/50"
                           : "bg-gradient-to-t from-gray-900/80 via-gray-900/50 to-transparent group-hover:from-emerald-900/70"
-                      }`}></div>
+                        }`}></div>
                       <div className="absolute top-2 left-2 text-xl">{c.icon}</div>
                     </div>
                     <div className="p-3 bg-white">
@@ -381,11 +374,10 @@ const surgeryDatabase = {
                   <button
                     key={a.id}
                     onClick={() => setSelectedAge(a.id)}
-                    className={`group relative p-4 border rounded-lg md:rounded-xl transition-all duration-300 text-center hover:shadow-md ${
-                      selectedAge === a.id
+                    className={`group relative p-4 border rounded-lg md:rounded-xl transition-all duration-300 text-center hover:shadow-md ${selectedAge === a.id
                         ? "border-emerald-600 bg-gradient-to-br from-emerald-50 to-emerald-100 shadow scale-102"
                         : "border-gray-200 hover:border-emerald-300 hover:bg-gray-50"
-                    }`}
+                      }`}
                   >
                     <div className="text-2xl md:text-3xl mb-2">{a.icon}</div>
                     <h4 className="font-semibold text-gray-900 mb-1 text-sm">{a.label}</h4>
@@ -434,7 +426,7 @@ const surgeryDatabase = {
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"></path></svg>
                     Disclaimer
                   </span>
-                  This is a computer-generated assessment and not a finalized medical result. Please consult exclusively with Dr. Hyder for a proper clinical diagnosis and treatment plan.
+                  This is a computer-generated assessment and not a finalized medical result. Please consult exclusively with Dr. Hydar for a proper clinical diagnosis and treatment plan.
                 </div>
               </div>
 
@@ -446,8 +438,8 @@ const surgeryDatabase = {
                     className="bg-gradient-to-br from-white to-emerald-50 border border-emerald-200 rounded-lg md:rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 hover:scale-101"
                   >
                     <div className="relative h-24 md:h-40 overflow-hidden">
-                      <img 
-                        src={surgery.img} 
+                      <img
+                        src={surgery.img}
                         alt={surgery.name}
                         className="w-full h-full object-cover"
                       />
@@ -457,10 +449,10 @@ const surgeryDatabase = {
                         <h4 className="text-base md:text-lg font-bold text-white">{surgery.name}</h4>
                       </div>
                     </div>
-                    
+
                     <div className="p-4 md:p-5">
                       <p className="text-sm text-gray-700 mb-3 leading-relaxed">{surgery.description}</p>
-                      
+
                       <div className="grid grid-cols-2 gap-2 mb-3">
                         <div className="bg-white rounded p-2 border border-emerald-100">
                           <p className="text-xs text-gray-600 mb-1">Recovery Time</p>
@@ -514,7 +506,7 @@ const surgeryDatabase = {
           <p className="text-sm text-gray-600 mb-2">
             Still have questions? Our medical experts are here to help.
           </p>
-        
+
         </div>
       </div>
     </section>

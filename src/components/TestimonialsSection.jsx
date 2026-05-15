@@ -8,19 +8,19 @@ const testimonials = [
     name: "Ayesha Rahman",
     rating: 5,
     review:
-      "Dr. Hyder gave me my life back. I can now move freely without knee pain. The treatment and care were excellent.",
+      "Dr. Hydar gave me my life back. I can now move freely without knee pain. The treatment and care were excellent.",
   },
   {
     name: "Muhammad Shafi",
     rating: 5,
     review:
-      "Dr. Hyder and his team explained everything clearly. The surgery and recovery process were handled very professionally.",
+      "Dr. Hydar and his team explained everything clearly. The surgery and recovery process were handled very professionally.",
   },
   {
     name: "Fathima Noor",
     rating: 5,
     review:
-      "I was very anxious before surgery, but Dr. Hyder gave me confidence. My recovery was smooth and faster than expected.",
+      "I was very anxious before surgery, but Dr. Hydar gave me confidence. My recovery was smooth and faster than expected.",
   },
   {
     name: "Abdul Rasheed",
@@ -32,7 +32,7 @@ const testimonials = [
     name: "Safiya Basheer",
     rating: 4,
     review:
-      "I felt very comfortable and safe under Dr. Hyder’s care. Highly recommended for knee-related treatments.",
+      "I felt very comfortable and safe under Dr. Hydar’s care. Highly recommended for knee-related treatments.",
   },
   {
     name: "Shamsudheen K",
@@ -71,7 +71,7 @@ export default function TestimonialsSection() {
 
         {/* TITLE */}
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-gray-900 dark:text-white">
-          What Patients Say About Dr. Hyder
+          What Patients Say About Dr. Hydar
         </h2>
 
         {/* SUBTITLE */}
@@ -94,11 +94,11 @@ export default function TestimonialsSection() {
               paused
                 ? {}
                 : {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: speed,
-                    ease: "linear",
-                  }
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: speed,
+                  ease: "linear",
+                }
             }
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
